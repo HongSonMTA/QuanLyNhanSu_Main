@@ -1,0 +1,25 @@
+E:\Kỳ 6\Công nghệ web\demo\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe.config
+E:\Kỳ 6\Thực Tập Nhóm\Bài Tập\ThucTapNhom_QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe.config
+C:\Users\Hong Son\Desktop\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe.config
+C:\Users\Hong Son\Desktop\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe
+C:\Users\Hong Son\Desktop\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.pdb
+C:\Users\Hong Son\Desktop\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csprojResolveAssemblyReference.cache
+C:\Users\Hong Son\Desktop\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Properties.Resources.resources
+C:\Users\Hong Son\Desktop\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.GenerateResource.Cache
+C:\Users\Hong Son\Desktop\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.exe
+C:\Users\Hong Son\Desktop\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.pdb
+C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe.config
+C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.exe
+C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.pdb
+C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csprojResolveAssemblyReference.cache
+C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.frmphongBan.resources
+C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Properties.Resources.resources
+C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.GenerateResource.Cache
+C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe
+C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.pdb
+C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_BUS.dll
+C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_DAL.dll
+C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_Entity.dll
+C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_BUS.pdb
+C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_DAL.pdb
+C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_Entity.pdb
