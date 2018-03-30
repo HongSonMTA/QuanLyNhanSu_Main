@@ -33,7 +33,7 @@ create table NhanVien(
 MaNV varchar(10) primary key,
 HoTen nvarchar(50),
 DanToc nvarchar(50),
-GioiTinh NVARCHAR(5) CHECK(GioiTinh IN (N'Nam',N'Nữ')),
+GioiTinh BIT,
 SDT CHAR(15),
 QueQuan nvarchar(50),
 NgaySinh date,
@@ -70,12 +70,12 @@ VALUES  ( N'user1', -- TaiKhoan - nvarchar(30)
 
 go
 insert into NhanVien(MaNV,HoTen,DanToc,GioiTinh,SDT,QueQuan,NgaySinh)
-values ('NV01','Hoàng Thị Minh','kinh',N'Nữ','0976986543',N'Hà Nội','09-08-1990'),
-('NV02',N'Nguyễn Quang Huy','kinh','Nam','0973686583',N'Vĩnh Phúc','10-19-1990'),
-('NV03',N'Ngô Hữu Huy','kinh','Nam','0976639201',N'Hà Nam','03-20-1993'),
-('NV04',N'Bùi Trung Kiên','kinh','Nam','0976863496',N'Hà Nội','12-08-1992'),
-('NV05',N'Nguyễn Thị Ngọc','kinh',N'Nữ','01647386289',N'Phú Thọ','02-08-1991'),
-('NV06',N'Lê Bá Lộc','kinh','Nam','0976963984',N'Ha Noi','01-08-1995')
+values ('NV01','Hoàng Thị Minh','kinh',1,'0976986543',N'Hà Nội','09-08-1990'),
+('NV02',N'Nguyễn Quang Huy','kinh',0,'0973686583',N'Vĩnh Phúc','10-19-1990'),
+('NV03',N'Ngô Hữu Huy','kinh',0,'0976639201',N'Hà Nam','03-20-1993'),
+('NV04',N'Bùi Trung Kiên','kinh',0,'0976863496',N'Hà Nội','12-08-1992'),
+('NV05',N'Nguyễn Thị Ngọc','kinh',1,'01647386289',N'Phú Thọ','02-08-1991'),
+('NV06',N'Lê Bá Lộc','kinh',0,'0976963984',N'Ha Noi','01-08-1995')
 
 
 GO
@@ -172,4 +172,66 @@ CREATE PROC DangNhap(@TaiKhoan NCHAR(50),@MatKhau NCHAR(50))
 AS
 BEGIN
 SELECT * FROM dbo.NguoiDung WHERE TaiKhoan=@TaiKhoan AND MatKhau=@MatKhau
+END
+
+-- Ánh- Thủ tục Nhân Viên
+-- Hiện ra danh sách Nhân Viên
+GO
+CREATE PROC NV_SelectAll 
+AS
+BEGIN
+	SELECT * FROM dbo.NhanVien
+END;
+
+go
+EXEC dbo.NV_SelectAll
+
+--
+GO
+CREATE PROC NV_SelectByID (@MaNV varchar(10))
+AS
+BEGIN
+		SELECT * FROM dbo.NhanVien WHERE MaNV = @MaNV
+END
+
+GO
+EXEC dbo.NV_SelectByID @MaNV = 'nv01' -- varchar(10)
+
+-- Thêm Nhân Viên
+GO
+CREATE PROC ThemNV(@MaNV VARCHAR(10), @HoTen NVARCHAR(50), @DanToc NVARCHAR(50), @GioiTinh BIT, @SDT CHAR(15), @QueQuan NVARCHAR(50), @NgaySinh DATE, @MaTDHV VARCHAR(10), @MaPB VARCHAR(10), @BacLuong INT)
+AS
+BEGIN
+INSERT INTO dbo.NhanVien
+        ( MaNV ,
+          HoTen ,
+          DanToc ,
+          GioiTinh ,
+          SDT ,
+          QueQuan ,
+          NgaySinh ,
+          MaTDHV ,
+          MaPB ,
+          BacLuong
+        )
+VALUES  ( @MaNV,@HoTen,@DanToc,@GioiTinh,@SDT,@QueQuan,@NgaySinh,@MaTDHV,@MaPB,@BacLuong
+        )
+END
+
+-- Sửa Nhân Viên
+GO
+CREATE PROC SuaNV(@MaNV VARCHAR(10), @HoTen NVARCHAR(50), @DanToc NVARCHAR(50), @GioiTinh BIT, @SDT CHAR(15), @QueQuan NVARCHAR(50), @NgaySinh DATE, @MaTDHV VARCHAR(10), @MaPB VARCHAR(10), @BacLuong INT)
+AS
+BEGIN
+UPDATE dbo.NhanVien
+SET MaNV=@MaNV,HoTen=@HoTen,DanToc=@DanToc,GioiTinh=@GioiTinh,SDT=@SDT,QueQuan=@QueQuan,NgaySinh=@NgaySinh,MaTDHV=@MaTDHV,MaPB=@MaPB,BacLuong=@BacLuong
+END
+
+-- Xóa Nhân Viên
+GO
+CREATE PROC XoaNV(@MaNV VARCHAR(10))
+AS
+BEGIN
+DELETE dbo.NhanVien
+WHERE MaNV=@MaNV
 END
