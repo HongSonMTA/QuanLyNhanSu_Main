@@ -16,3 +16,12 @@ C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\
 C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu_BUS\obj\Debug\QuanLyNhanSu_BUS.csprojResolveAssemblyReference.cache
 C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu_BUS\obj\Debug\QuanLyNhanSu_BUS.dll
 C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu_BUS\obj\Debug\QuanLyNhanSu_BUS.pdb
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_BUS.dll
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_BUS.pdb
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_DAL.dll
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_Entity.dll
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_DAL.pdb
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_Entity.pdb
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\obj\Debug\QuanLyNhanSu_BUS.csprojResolveAssemblyReference.cache
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\obj\Debug\QuanLyNhanSu_BUS.dll
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\obj\Debug\QuanLyNhanSu_BUS.pdb

@@ -23,3 +23,19 @@ C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\bin\Debu
 C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_BUS.pdb
 C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_DAL.pdb
 C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_Entity.pdb
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe.config
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.exe
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.pdb
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.pdb
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_BUS.dll
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_DAL.dll
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_Entity.dll
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_BUS.pdb
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_DAL.pdb
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_Entity.pdb
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csprojResolveAssemblyReference.cache
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.frmphongBan.resources
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Properties.Resources.resources
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.GenerateResource.Cache
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.frmLuong.resources

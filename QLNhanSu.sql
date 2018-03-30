@@ -64,13 +64,14 @@ VALUES  ( N'user1', -- TaiKhoan - nvarchar(30)
           )
 go
 insert into NhanVien(MaNV,HoTen,DanToc,GioiTinh,SDT,QueQuan,NgaySinh)
-values ('NV01','Hoàng Thị Minh','kinh','Nu','0976986543','Hà Nội','09-08-1990'),
-('NV02','Nguyễn Quang Huy','kinh','Nam','0973686583','Vĩnh Phúc','10-19-1990'),
-('NV03','Ngô Hữu Huy','kinh','Nam','0976639201','Hà Nam','03-20-1993'),
-('NV04','Bùi Trung Kiên','kinh','Nam','0976863496','Hà Nội','12-08-1992'),
-('NV05','Nguyễn Thị Ngọc','kinh','Nu','01647386289','Phú Thọ','02-08-1991'),
-('NV0','Lê Bá Lộc','kinh','Nam','0976963984','Ha Noi','01-08-1995')
+values ('NV01','Hoàng Thị Minh','kinh',N'Nữ','0976986543',N'Hà Nội','09-08-1990'),
+('NV02',N'Nguyễn Quang Huy','kinh','Nam','0973686583',N'Vĩnh Phúc','10-19-1990'),
+('NV03',N'Ngô Hữu Huy','kinh','Nam','0976639201',N'Hà Nam','03-20-1993'),
+('NV04',N'Bùi Trung Kiên','kinh','Nam','0976863496',N'Hà Nội','12-08-1992'),
+('NV05',N'Nguyễn Thị Ngọc','kinh',N'Nữ','01647386289',N'Phú Thọ','02-08-1991'),
+('NV06',N'Lê Bá Lộc','kinh','Nam','0976963984',N'Ha Noi','01-08-1995')
 
+DELETE dbo.NhanVien WHERE MaNV = 'NV06'
 GO
 
 CREATE PROC SP_DangKi(@taikhoan NVARCHAR(30),@matkhau NVARCHAR(30))
@@ -82,6 +83,7 @@ VALUES  ( @taikhoan, -- TaiKhoan - nvarchar(30)
           @matkhau  -- MatKhau - nvarchar(30)
           )
 END
+
 GO
 CREATE PROC Them_PB (@MaPb varchar(10), @TenPB nvarchar(30), @MaTP varchar(10),@DiaChi Nvarchar(30), @Sdt Char(11))
 AS
@@ -90,6 +92,7 @@ BEGIN
 	        ( MaPB, TenPB,MaTP, DiaChi, SDT )
 	VALUES  (@MaPb,@TenPB,@MaTP,@DiaChi,@Sdt )
 END
+
 GO
 CREATE PROC Sua_PB (@MaPb varchar(10), @TenPB nvarchar(30), @MaTP varchar(10),@DiaChi Nvarchar(30), @Sdt Char(11))
 AS
@@ -98,18 +101,21 @@ BEGIN
 	SET TenPB = @TenPB,MaTP = @MaTP,DiaChi = @DiaChi,SDT=@Sdt
 	WHERE MaPB = @MaPb
 END
+
 GO 
 CREATE PROC Xoa_PB (@Ma varchar(10))
 AS
 BEGIN
 		DELETE dbo.PhongBan WHERE MaPB = @Ma
 END
+
 GO
-ALTER PROC PB_SelectAll 
+CREATE PROC PB_SelectAll 
 AS
 BEGIN
 		SELECT * FROM dbo.PhongBan
 END
+
 GO
 CREATE PROC PB_SelectByID (@Ma varchar(10))
 AS
