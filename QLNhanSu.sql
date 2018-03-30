@@ -129,7 +129,7 @@ END
 GO
 
 ---- Thanh----Luong
-ALTER PROC SP_ThemLuong (@BacLuong INT, @LuongCoBan INT , @HeSoLuong INT , @HeSoPhuCap INT )
+CREATE PROC SP_ThemLuong (@BacLuong INT, @LuongCoBan INT , @HeSoLuong INT , @HeSoPhuCap INT )
 AS
 BEGIN
 	INSERT dbo.Luong( BacLuong ,LuongCoBan ,HeSoLuong ,HeSoPhuCap)
@@ -165,4 +165,11 @@ CREATE PROC SP_Luong_SelectByID (@BacLuong INT )
 AS
 BEGIN
 		SELECT * FROM dbo.Luong WHERE BacLuong = @BacLuong
+END
+GO
+--Dương - thu tuc dang nhap
+CREATE PROC DangNhap(@TaiKhoan NCHAR(50),@MatKhau NCHAR(50))
+AS
+BEGIN
+SELECT * FROM dbo.NguoiDung WHERE TaiKhoan=@TaiKhoan AND MatKhau=@MatKhau
 END
