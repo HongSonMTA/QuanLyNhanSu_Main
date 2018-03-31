@@ -12,7 +12,7 @@ namespace QuanLyNhanSu_DAL
         private SqlConnection conn;
         public KetNoi()
         {
-            conn = new SqlConnection(@"Data Source=NGOCANH\NGOCANH;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
+            conn = new SqlConnection(@"Data Source=DESKTOP-7SK7HI5\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
         }
         public DataTable GetData(string strSql)
         {
@@ -23,22 +23,20 @@ namespace QuanLyNhanSu_DAL
             conn.Close();
             return dt;
         }
-        public string TangMa(String sql)
+        public string TangMa(String sql,string Ma)
         {    
             SqlCommand cm = new SqlCommand(sql, conn);      // bắt đầu truy vấn
             cm.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(cm);     //vận chuyển dữ liệu về
             DataTable dt = new DataTable();                 //tạo 1 kho ảo để chứa dữ liệu
             da.Fill(dt);
-            string Ma = "";
             if (dt.Rows.Count <= 0)
             {
-                Ma = "PB01";
+                Ma = Ma + "01";
             }
             else
             {
-                int k;
-                Ma = "PB";
+                int k;                
                 k = Convert.ToInt32(dt.Rows[dt.Rows.Count - 1][0].ToString().Substring(2, 2));
                 k = k + 1;
                 if (k < 10)
