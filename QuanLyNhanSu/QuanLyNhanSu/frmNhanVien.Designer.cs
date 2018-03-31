@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanVien));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -56,14 +58,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbTimKiem = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +69,14 @@
             this.MaTDHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BacLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbTimKiem = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -83,6 +85,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnHuy);
+            this.groupBox3.Controls.Add(this.btnLuu);
             this.groupBox3.Controls.Add(this.btnThoat);
             this.groupBox3.Controls.Add(this.btnClear);
             this.groupBox3.Controls.Add(this.btnXoa);
@@ -90,10 +94,40 @@
             this.groupBox3.Controls.Add(this.btnThem);
             this.groupBox3.Location = new System.Drawing.Point(19, 381);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(298, 81);
+            this.groupBox3.Size = new System.Drawing.Size(298, 160);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chức Năng";
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
+            this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHuy.Location = new System.Drawing.Point(87, 104);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(49, 50);
+            this.btnHuy.TabIndex = 11;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnLuu.Location = new System.Drawing.Point(9, 104);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(52, 50);
+            this.btnLuu.TabIndex = 10;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnThoat
             // 
@@ -101,7 +135,7 @@
             this.btnThoat.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThoat.Location = new System.Drawing.Point(225, 19);
+            this.btnThoat.Location = new System.Drawing.Point(236, 104);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(52, 50);
             this.btnThoat.TabIndex = 9;
@@ -116,7 +150,7 @@
             this.btnClear.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnClear.Location = new System.Drawing.Point(172, 19);
+            this.btnClear.Location = new System.Drawing.Point(236, 19);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(48, 50);
             this.btnClear.TabIndex = 8;
@@ -131,7 +165,7 @@
             this.btnXoa.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnXoa.Location = new System.Drawing.Point(118, 19);
+            this.btnXoa.Location = new System.Drawing.Point(164, 19);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(48, 50);
             this.btnXoa.TabIndex = 6;
@@ -146,7 +180,7 @@
             this.btnSua.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSua.Location = new System.Drawing.Point(63, 19);
+            this.btnSua.Location = new System.Drawing.Point(87, 19);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(49, 50);
             this.btnSua.TabIndex = 5;
@@ -317,7 +351,7 @@
             this.btnLamMoi.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLamMoi.Location = new System.Drawing.Point(874, 23);
+            this.btnLamMoi.Location = new System.Drawing.Point(840, 23);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(89, 25);
             this.btnLamMoi.TabIndex = 22;
@@ -367,6 +401,78 @@
             this.dgvNhanVien.TabIndex = 0;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
             this.dgvNhanVien.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvNhanVien_RowPrePaint);
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Width = 35;
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã NV";
+            this.MaNV.Name = "MaNV";
+            this.MaNV.Width = 50;
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Họ Tên";
+            this.HoTen.Name = "HoTen";
+            // 
+            // DanToc
+            // 
+            this.DanToc.DataPropertyName = "DanToc";
+            this.DanToc.HeaderText = "Dân Tộc";
+            this.DanToc.Name = "DanToc";
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới Tính";
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GioiTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            // 
+            // QueQuan
+            // 
+            this.QueQuan.DataPropertyName = "QueQuan";
+            this.QueQuan.HeaderText = "Quê Quán";
+            this.QueQuan.Name = "QueQuan";
+            this.QueQuan.Width = 90;
+            // 
+            // MaTDHV
+            // 
+            this.MaTDHV.DataPropertyName = "MaTDHV";
+            this.MaTDHV.HeaderText = "Mã TĐHV";
+            this.MaTDHV.Name = "MaTDHV";
+            // 
+            // MaPB
+            // 
+            this.MaPB.DataPropertyName = "MaPB";
+            this.MaPB.HeaderText = "Mã PB";
+            this.MaPB.Name = "MaPB";
+            this.MaPB.Width = 80;
+            // 
+            // BacLuong
+            // 
+            this.BacLuong.DataPropertyName = "BacLuong";
+            this.BacLuong.HeaderText = "Bậc Lương";
+            this.BacLuong.Name = "BacLuong";
+            this.BacLuong.Width = 80;
             // 
             // label6
             // 
@@ -467,83 +573,12 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Nhân Viên";
             // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.Width = 35;
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Mã NV";
-            this.MaNV.Name = "MaNV";
-            this.MaNV.Width = 50;
-            // 
-            // HoTen
-            // 
-            this.HoTen.DataPropertyName = "HoTen";
-            this.HoTen.HeaderText = "Họ Tên";
-            this.HoTen.Name = "HoTen";
-            // 
-            // DanToc
-            // 
-            this.DanToc.DataPropertyName = "DanToc";
-            this.DanToc.HeaderText = "Dân Tộc";
-            this.DanToc.Name = "DanToc";
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "Giới Tính";
-            this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.GioiTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SĐT";
-            this.SDT.Name = "SDT";
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày Sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            // 
-            // QueQuan
-            // 
-            this.QueQuan.DataPropertyName = "QueQuan";
-            this.QueQuan.HeaderText = "Quê Quán";
-            this.QueQuan.Name = "QueQuan";
-            this.QueQuan.Width = 90;
-            // 
-            // MaTDHV
-            // 
-            this.MaTDHV.DataPropertyName = "MaTDHV";
-            this.MaTDHV.HeaderText = "Mã TĐHV";
-            this.MaTDHV.Name = "MaTDHV";
-            // 
-            // MaPB
-            // 
-            this.MaPB.DataPropertyName = "MaPB";
-            this.MaPB.HeaderText = "Mã PB";
-            this.MaPB.Name = "MaPB";
-            this.MaPB.Width = 80;
-            // 
-            // BacLuong
-            // 
-            this.BacLuong.DataPropertyName = "BacLuong";
-            this.BacLuong.HeaderText = "Bậc Lương";
-            this.BacLuong.Name = "BacLuong";
-            this.BacLuong.Width = 80;
-            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1325, 509);
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.ClientSize = new System.Drawing.Size(1325, 587);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtTimKiem);
@@ -613,5 +648,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTDHV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPB;
         private System.Windows.Forms.DataGridViewTextBoxColumn BacLuong;
+        private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Button btnLuu;
     }
 }

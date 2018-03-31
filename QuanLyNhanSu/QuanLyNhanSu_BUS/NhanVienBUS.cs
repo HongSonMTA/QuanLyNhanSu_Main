@@ -16,6 +16,10 @@ namespace QuanLyNhanSu_BUS
         {
             return da.GetData();
         }
+        public string TangMa()
+        {
+            return da.TangMa();
+        }
         public int InsertData(NhanVienEntity NV)
         {
             return da.InsertData(NV);

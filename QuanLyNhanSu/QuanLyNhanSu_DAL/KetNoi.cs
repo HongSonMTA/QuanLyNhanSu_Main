@@ -9,14 +9,10 @@ namespace QuanLyNhanSu_DAL
 {
     public class KetNoi
     {
-        private SqlConnection conn;
+       private SqlConnection conn;
         public KetNoi()
         {
-<<<<<<< HEAD
-            conn = new SqlConnection(@"Data Source=ManhCuong-PC;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
-=======
-            conn = new SqlConnection(@"Data Source=ADMIN-PC\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
->>>>>>> d52009b58d10deaeddee5a6fe883983c362438c0
+            conn = new SqlConnection(@"Data Source=NGOCANH\NGOCANH;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
         }
         public DataTable GetData(string strSql)
         {

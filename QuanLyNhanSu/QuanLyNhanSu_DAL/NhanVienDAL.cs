@@ -58,6 +58,19 @@ namespace QuanLyNhanSu_DAL
         };
             return conn.ExcuteSQL("XoaNV", para);
         }
+        //public int MaPB(string ID)
+        //{
+
+        //    SqlParameter[] para =
+        //    {
+        //        new SqlParameter("MaPB",ID)
+        //};
+        //    return conn.ExcuteSQL("DSMaPB", para);
+        //}
+        public string TangMa()
+        {
+            return conn.TangMa("Select * From NhanVien", "NV");
+        }
         public static List<NhanVienEntity> TimKiem(int type, string TuKhoa)
         {
             string query = "";
@@ -80,9 +93,5 @@ namespace QuanLyNhanSu_DAL
             }
             return Helper.ToListof<NhanVienEntity>(conn.GetData("SELECT * FROM dbo.NhanVien"));
         }
-        //public string TangMa()
-        //{
-        //    return conn.TangMa("Select * from NhanVien", "NV");
-        //}
     }
 }

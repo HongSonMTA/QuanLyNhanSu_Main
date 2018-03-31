@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChucVuDAL.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="KetNoi.cs" />
     <Compile Include="LuongDAL.cs" />
@@ -48,11 +47,7 @@
     <Compile Include="NhanVienDAL.cs" />
     <Compile Include="PhongBanDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-    <Compile Include="ThoiGianCongTacDAL.cs" />
-=======
     <Compile Include="TrinhDoHocVAnDAL.cs" />
->>>>>>> d52009b58d10deaeddee5a6fe883983c362438c0
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuanLyNhanSu_Entity\QuanLyNhanSu_Entity.csproj">
