@@ -19,6 +19,7 @@ C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DA
 C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\obj\Debug\QuanLyNhanSu_DAL.csprojResolveAssemblyReference.cache
 C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\obj\Debug\QuanLyNhanSu_DAL.dll
 C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\obj\Debug\QuanLyNhanSu_DAL.pdb
+<<<<<<< HEAD
 D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\bin\Debug\QuanLyNhanSu_DAL.dll
 D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\bin\Debug\QuanLyNhanSu_DAL.pdb
 D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\bin\Debug\QuanLyNhanSu_Entity.dll
@@ -26,3 +27,12 @@ D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\bin\Debug\QuanLyN
 D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\obj\Debug\QuanLyNhanSu_DAL.csprojResolveAssemblyReference.cache
 D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\obj\Debug\QuanLyNhanSu_DAL.dll
 D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\obj\Debug\QuanLyNhanSu_DAL.pdb
+=======
+C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\bin\Debug\QuanLyNhanSu_DAL.dll
+C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\bin\Debug\QuanLyNhanSu_DAL.pdb
+C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\bin\Debug\QuanLyNhanSu_Entity.dll
+C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\bin\Debug\QuanLyNhanSu_Entity.pdb
+C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\obj\Debug\QuanLyNhanSu_DAL.csprojResolveAssemblyReference.cache
+C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\obj\Debug\QuanLyNhanSu_DAL.dll
+C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_DAL\obj\Debug\QuanLyNhanSu_DAL.pdb
+>>>>>>> d52009b58d10deaeddee5a6fe883983c362438c0
