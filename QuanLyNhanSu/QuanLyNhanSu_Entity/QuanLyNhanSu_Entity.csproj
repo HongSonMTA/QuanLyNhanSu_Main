@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LuongEntity.cs" />
+    <Compile Include="NguoiDung.cs" />
+    <Compile Include="NhanVienEntity.cs" />
     <Compile Include="PhongBanEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

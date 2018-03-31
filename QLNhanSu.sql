@@ -70,7 +70,7 @@ VALUES  ( N'user1', -- TaiKhoan - nvarchar(30)
 
 go
 insert into NhanVien(MaNV,HoTen,DanToc,GioiTinh,SDT,QueQuan,NgaySinh)
-values ('NV01','Hoàng Thị Minh','kinh',1,'0976986543',N'Hà Nội','09-08-1990'),
+values ('NV01',N'Hoàng Thị Minh','kinh',1,'0976986543',N'Hà Nội','09-08-1990'),
 ('NV02',N'Nguyễn Quang Huy','kinh',0,'0973686583',N'Vĩnh Phúc','10-19-1990'),
 ('NV03',N'Ngô Hữu Huy','kinh',0,'0976639201',N'Hà Nam','03-20-1993'),
 ('NV04',N'Bùi Trung Kiên','kinh',0,'0976863496',N'Hà Nội','12-08-1992'),
@@ -126,8 +126,8 @@ AS
 BEGIN
 		SELECT * FROM dbo.PhongBan WHERE MaPB = @Ma
 END
-GO
 
+GO
 ---- Thanh----Luong
 CREATE PROC SP_ThemLuong (@BacLuong INT, @LuongCoBan INT , @HeSoLuong INT , @HeSoPhuCap INT )
 AS
@@ -202,20 +202,8 @@ GO
 CREATE PROC ThemNV(@MaNV VARCHAR(10), @HoTen NVARCHAR(50), @DanToc NVARCHAR(50), @GioiTinh BIT, @SDT CHAR(15), @QueQuan NVARCHAR(50), @NgaySinh DATE, @MaTDHV VARCHAR(10), @MaPB VARCHAR(10), @BacLuong INT)
 AS
 BEGIN
-INSERT INTO dbo.NhanVien
-        ( MaNV ,
-          HoTen ,
-          DanToc ,
-          GioiTinh ,
-          SDT ,
-          QueQuan ,
-          NgaySinh ,
-          MaTDHV ,
-          MaPB ,
-          BacLuong
-        )
-VALUES  ( @MaNV,@HoTen,@DanToc,@GioiTinh,@SDT,@QueQuan,@NgaySinh,@MaTDHV,@MaPB,@BacLuong
-        )
+INSERT INTO dbo.NhanVien( MaNV , HoTen ,DanToc ,GioiTinh ,SDT ,QueQuan ,NgaySinh ,MaTDHV ,MaPB ,BacLuong)
+VALUES  ( @MaNV,@HoTen,@DanToc,@GioiTinh,@SDT,@QueQuan,@NgaySinh,@MaTDHV,@MaPB,@BacLuong)
 END
 
 -- Sửa Nhân Viên

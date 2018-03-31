@@ -1,13 +1,3 @@
-C:\Users\Hong Son\Desktop\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu_Entity\bin\Debug\QuanLyNhanSu_Entity.dll
-C:\Users\Hong Son\Desktop\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu_Entity\bin\Debug\QuanLyNhanSu_Entity.pdb
-C:\Users\Hong Son\Desktop\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.dll
-C:\Users\Hong Son\Desktop\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.pdb
-C:\Users\Hong Son\Desktop\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.csprojResolveAssemblyReference.cache
-C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu_Entity\bin\Debug\QuanLyNhanSu_Entity.dll
-C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu_Entity\bin\Debug\QuanLyNhanSu_Entity.pdb
-C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.csprojResolveAssemblyReference.cache
-C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.dll
-C:\Users\Hong Son\Desktop\QuanLyNhanSu_master\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.pdb
 G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\bin\Debug\QuanLyNhanSu_Entity.dll
 G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\bin\Debug\QuanLyNhanSu_Entity.pdb
 G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.csprojResolveAssemblyReference.cache
