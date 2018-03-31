@@ -16,10 +16,6 @@ namespace QuanLyNhanSu_BUS
         {
             return da.GetData();
         }
-        public DataTable GetDataByID(string ID)
-        {
-            return da.GetDataByID(ID);
-        }
         public int InsertData(NhanVienEntity NV)
         {
             return da.InsertData(NV);

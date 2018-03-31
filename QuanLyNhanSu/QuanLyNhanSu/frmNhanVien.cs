@@ -32,9 +32,6 @@ namespace QuanLyNhanSu
             cbMaPB.Text = "";
         }
 
-        // xử lý cbMaPB
-
-
         private void HienThi()
         {
             dgvNhanVien.DataSource = Bus.GetData();
@@ -73,8 +70,8 @@ namespace QuanLyNhanSu
             txtMaTDHV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaTDHV"].Value);
             cbMaPB.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaPB"].Value);
             txtBacLuong.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["BacLuong"].Value);
-            radNam.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["GioiTinh"].Value);
-            radNu.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["GioiTinh"].Value);
+            //radNam.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["GioiTinh"].Value);
+            //radNu.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["GioiTinh"].Value);
         }
 
         private void dgvNhanVien_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
@@ -163,6 +160,22 @@ namespace QuanLyNhanSu
             MessageBox.Show("Sửa Thành Công ! ");
             HienThi();
             clearData();
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            HienThi();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (txtTimKiem.Text.Trim() == "" || txtTimKiem.Text.Trim().Length > 50)
+            {
+                MessageBox.Show("Lỗi Từ khóa", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            dgvNhanVien.Refresh();
+            dgvNhanVien.DataSource = QuanLyNhanSu_DAL.NhanVienDAL.TimKiem(cbTimKiem.SelectedIndex, txtTimKiem.Text.Trim());
         }
     }
 }

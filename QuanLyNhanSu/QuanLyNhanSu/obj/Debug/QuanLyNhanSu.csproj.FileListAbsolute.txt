@@ -37,3 +37,18 @@ C:\Users\Hong Son\Desktop\QuanLyNhanSu_Main\QuanLyNhanSu_Main\QuanLyNhanSu\QuanL
 C:\Users\Hong Son\Desktop\QuanLyNhanSu_Main\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.frmphongBan.resources
 C:\Users\Hong Son\Desktop\QuanLyNhanSu_Main\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Properties.Resources.resources
 C:\Users\Hong Son\Desktop\QuanLyNhanSu_Main\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.GenerateResource.Cache
+C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe
+C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.pdb
+C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_BUS.dll
+C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_DAL.dll
+C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_Entity.dll
+C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_BUS.pdb
+C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_DAL.pdb
+C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu_Entity.pdb
+C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csprojResolveAssemblyReference.cache
+C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.frmDangNhap.resources
+C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.frmLuong.resources
+C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.frmNhanVien.resources
+C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.frmphongBan.resources
+C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Properties.Resources.resources
+C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.GenerateResource.Cache

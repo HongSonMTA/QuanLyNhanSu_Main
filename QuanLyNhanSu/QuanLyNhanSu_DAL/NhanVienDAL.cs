@@ -16,11 +16,6 @@ namespace QuanLyNhanSu_DAL
         {
             return conn.GetData("NV_SelectAll", null);
         }
-        public DataTable GetDataByID(String ID)
-        {
-            SqlParameter[] para = { new SqlParameter("MaNV", ID) };
-            return conn.GetData("PV_SelectByID", para);
-        }
         public int InsertData(NhanVienEntity NV)
         {
             SqlParameter[] para =
@@ -36,7 +31,7 @@ namespace QuanLyNhanSu_DAL
                 new SqlParameter("MaPB",NV.MaPB),
                 new SqlParameter ("BacLuong",NV.BacLuong)
         };
-            return conn.ExcuteSQL("Them_NV ", para);
+            return conn.ExcuteSQL("ThemNV ", para);
         }
         public int UpdateData(NhanVienEntity NV)
         {
@@ -62,6 +57,28 @@ namespace QuanLyNhanSu_DAL
                 new SqlParameter("MaNV",ID)
         };
             return conn.ExcuteSQL("XoaNV", para);
+        }
+        public static List<NhanVienEntity> TimKiem(int type, string TuKhoa)
+        {
+            string query = "";
+            KetNoi conn = new KetNoi();
+            switch (type)
+            {
+                case 0:
+                    query = string.Format("SELECT * FROM dbo.NhanVien WHERE MaNV LIKE '%{0}%'", TuKhoa);
+                    return Helper.ToListof<NhanVienEntity>(conn.GetData(query));
+                case 1:
+
+                    query = string.Format("SELECT * FROM dbo.NhanVien WHERE HoTen LIKE N'%{0}%'", TuKhoa);
+                    return Helper.ToListof<NhanVienEntity>(conn.GetData(query));
+                case 2:
+                    query = string.Format("SELECT * FROM dbo.NhanVien WHERE MaPB LIKE '%{0}%'", TuKhoa);
+                    return Helper.ToListof<NhanVienEntity>(conn.GetData(query));
+                case 3:
+                    query = string.Format("SELECT * FROM dbo.NhanVien WHERE QueQuan LIKE N'%{0}%'", TuKhoa);
+                    return Helper.ToListof<NhanVienEntity>(conn.GetData(query));
+            }
+            return Helper.ToListof<NhanVienEntity>(conn.GetData("SELECT * FROM dbo.NhanVien"));
         }
     }
 }
