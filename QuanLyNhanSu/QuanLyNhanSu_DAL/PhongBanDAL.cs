@@ -53,5 +53,9 @@ namespace QuanLyNhanSu_DAL
         };
             return conn.ExcuteSQL("Xoa_PB ", para);
         }
+        public string TangMa()
+        {
+            return conn.TangMa("Select * From PhongBan");
+        }
     }
 }

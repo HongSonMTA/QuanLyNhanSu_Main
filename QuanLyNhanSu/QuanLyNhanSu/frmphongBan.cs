@@ -16,7 +16,7 @@ namespace QuanLyNhanSu
     {
         PhongBanEntity obj = new PhongBanEntity();
         PhongbanBus Bus = new PhongbanBus();
-        private int fluu = 0;
+        private int fluu = 1;
         public frmphongBan()
         {
             InitializeComponent();
@@ -33,8 +33,6 @@ namespace QuanLyNhanSu
             txtDiaChi.Enabled = e;
             cmbMaTP.Enabled = e;
             txtSdt.Enabled = e;
-            txtTimKiem.Enabled = e;
-            cmbTimKiem.Enabled = e;
         }
         private void clearData()
         {
@@ -44,18 +42,28 @@ namespace QuanLyNhanSu
             txtDiaChi.Text = "";
             txtSdt.Text = "";
         }
+
         private void HienThi()
         {
             dgvPhongBan.DataSource = Bus.GetData();
         }
         private void dgvPhongBan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtMaPB.Text = Convert.ToString(dgvPhongBan.CurrentRow.Cells["MaPb"].Value);
-            txtTenPB.Text = Convert.ToString(dgvPhongBan.CurrentRow.Cells["TenPB"].Value);
-            txtDiaChi.Text = Convert.ToString(dgvPhongBan.CurrentRow.Cells["DiaChi"].Value);
-            txtSdt.Text = Convert.ToString(dgvPhongBan.CurrentRow.Cells["SDT"].Value);
-            cmbMaTP.Text = Convert.ToString(dgvPhongBan.CurrentRow.Cells["MaTP"].Value);
-
+            if (fluu == 0)
+            {
+                txtTenPB.Text = Convert.ToString(dgvPhongBan.CurrentRow.Cells["TenPB"].Value);
+                txtDiaChi.Text = Convert.ToString(dgvPhongBan.CurrentRow.Cells["DiaChi"].Value);
+                txtSdt.Text = Convert.ToString(dgvPhongBan.CurrentRow.Cells["SDT"].Value);
+                cmbMaTP.Text = Convert.ToString(dgvPhongBan.CurrentRow.Cells["MaTP"].Value);
+            }
+            else
+            {
+                txtMaPB.Text = Convert.ToString(dgvPhongBan.CurrentRow.Cells["MaPb"].Value);
+                txtTenPB.Text = Convert.ToString(dgvPhongBan.CurrentRow.Cells["TenPB"].Value);
+                txtDiaChi.Text = Convert.ToString(dgvPhongBan.CurrentRow.Cells["DiaChi"].Value);
+                txtSdt.Text = Convert.ToString(dgvPhongBan.CurrentRow.Cells["SDT"].Value);
+                cmbMaTP.Text = Convert.ToString(dgvPhongBan.CurrentRow.Cells["MaTP"].Value);
+            }      
         }
         private void frmphongBan_Load(object sender, EventArgs e)
         {
@@ -74,14 +82,14 @@ namespace QuanLyNhanSu
                 try
                 {
                     Bus.DeleteData(txtMaPB.Text);
-                    MessageBox.Show("Xóa thành công!");
+                    MessageBox.Show("Xóa thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clearData();
                     DisEnl(false);
                     HienThi();
                 }
-                catch
+                catch (Exception ex)
                 {
-
+                    MessageBox.Show("Có Lỗi Không thể xóa !");
                 }
             }
         }
@@ -94,7 +102,9 @@ namespace QuanLyNhanSu
         private void btnThem_Click(object sender, EventArgs e)
         {
             fluu = 0;
+            txtMaPB.Text = Bus.TangMa();
             DisEnl(true);
+            txtMaPB.Enabled = false;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -106,19 +116,34 @@ namespace QuanLyNhanSu
             obj.Sdt = txtSdt.Text;
             if(fluu == 0)
             {
-                Bus.InsertData(obj);
-                MessageBox.Show("Thêm thành công!");
-                HienThi();
-                clearData();
-                DisEnl(false);
+                try
+                {
+                    Bus.InsertData(obj);
+                    MessageBox.Show("Thêm thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HienThi();
+                    clearData();
+                    DisEnl(false);
+                    fluu = 1;
+                }
+                catch
+                {
+
+                }
             }
             else
             {
-                Bus.UpdateData(obj);
-                MessageBox.Show("Sửa Thành Công ! ");
-                HienThi();
-                clearData();
-                DisEnl(false);
+                try
+                {
+                    Bus.UpdateData(obj);
+                    MessageBox.Show("Sửa Thành Công ! ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HienThi();
+                    clearData();
+                    DisEnl(false);
+                }
+                catch
+                {
+
+                }
             }
         }
 
@@ -129,6 +154,7 @@ namespace QuanLyNhanSu
             {
                 HienThi();
                 DisEnl(false);
+                fluu = 1;
             }
             else
                 return;
@@ -143,6 +169,12 @@ namespace QuanLyNhanSu
             }
             else
                 HienThi();
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            txtTimKiem.Text = "";
+            cmbTimKiem.Text = "";
         }
     }
 }
