@@ -77,6 +77,52 @@ values ('NV01',N'Hoàng Thị Minh','kinh',1,'0976986543',N'Hà Nội','09-08-19
 ('NV05',N'Nguyễn Thị Ngọc','kinh',1,'01647386289',N'Phú Thọ','02-08-1991'),
 ('NV06',N'Lê Bá Lộc','kinh',0,'0976963984',N'Ha Noi','01-08-1995')
 
+INSERT dbo.ThoiGianCongTac
+        ( MaNV, MaCV, NgayNhanChuc )
+VALUES  ( 'NV01','CV01','09/06/2013')
+INSERT dbo.ThoiGianCongTac
+        ( MaNV, MaCV, NgayNhanChuc )
+VALUES  ( 'NV02','CV05','02/21/2014')
+INSERT dbo.ThoiGianCongTac
+        ( MaNV, MaCV, NgayNhanChuc )
+VALUES  ( 'NV03','CV06','11/19/2012')
+INSERT dbo.ThoiGianCongTac
+        ( MaNV, MaCV, NgayNhanChuc )
+VALUES  ( 'NV04','CV02','05/11/2016')
+INSERT dbo.ThoiGianCongTac
+        ( MaNV, MaCV, NgayNhanChuc )
+VALUES  ( 'NV05','CV03','07/28/2015')
+INSERT dbo.ThoiGianCongTac
+        ( MaNV, MaCV, NgayNhanChuc )
+VALUES  ( 'NV06','CV04','04/20/2013')
+
+
+DELETE FROM dbo.ThoiGianCongTac
+DELETE FROM dbo.ChucVu
+INSERT INTO dbo.ChucVu
+        ( MaChucVu, TenChucVu )
+VALUES  ('CV01',N'Giám Đốc')
+INSERT dbo.ChucVu
+        ( MaChucVu, TenChucVu )
+VALUES  ('CV02',N'Trường Phòng')
+INSERT dbo.ChucVu
+        ( MaChucVu, TenChucVu )
+VALUES  ('CV03',N'Phó Giám Đốc')
+INSERT dbo.ChucVu
+        ( MaChucVu, TenChucVu )
+VALUES  ('CV04',N'Phó Phòng')
+INSERT dbo.ChucVu
+        ( MaChucVu, TenChucVu )
+VALUES  ('CV05',N'Trường Nhóm')
+INSERT dbo.ChucVu
+        ( MaChucVu, TenChucVu )
+VALUES  ('CV06',N'Phó Nhóm')
+INSERT dbo.ChucVu
+        ( MaChucVu, TenChucVu )
+VALUES  ('CV07',N'Nhân Viên')
+INSERT dbo.ChucVu
+        ( MaChucVu, TenChucVu )
+VALUES  ('CV08',N'Thư Ký')
 
 GO
 CREATE PROC SP_DangKi(@taikhoan NVARCHAR(30),@matkhau NVARCHAR(30))

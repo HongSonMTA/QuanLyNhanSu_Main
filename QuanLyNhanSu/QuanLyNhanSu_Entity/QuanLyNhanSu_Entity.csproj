@@ -40,11 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChucVuEntity.cs" />
     <Compile Include="LuongEntity.cs" />
     <Compile Include="NguoiDung.cs" />
     <Compile Include="NhanVienEntity.cs" />
     <Compile Include="PhongBanEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThoiGianCongTacEntity.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
