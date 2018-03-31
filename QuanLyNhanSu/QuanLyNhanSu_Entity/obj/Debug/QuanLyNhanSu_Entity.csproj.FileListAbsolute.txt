@@ -8,8 +8,16 @@ C:\Users\Hong Son\Desktop\QuanLyNhanSu_Main\QuanLyNhanSu_Main\QuanLyNhanSu\QuanL
 C:\Users\Hong Son\Desktop\QuanLyNhanSu_Main\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.csprojResolveAssemblyReference.cache
 C:\Users\Hong Son\Desktop\QuanLyNhanSu_Main\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.dll
 C:\Users\Hong Son\Desktop\QuanLyNhanSu_Main\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.pdb
+<<<<<<< HEAD
 D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.csprojResolveAssemblyReference.cache
 D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.dll
 D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.pdb
 D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\bin\Debug\QuanLyNhanSu_Entity.dll
 D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\bin\Debug\QuanLyNhanSu_Entity.pdb
+=======
+C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\bin\Debug\QuanLyNhanSu_Entity.dll
+C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\bin\Debug\QuanLyNhanSu_Entity.pdb
+C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.csprojResolveAssemblyReference.cache
+C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.dll
+C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_Entity\obj\Debug\QuanLyNhanSu_Entity.pdb
+>>>>>>> d52009b58d10deaeddee5a6fe883983c362438c0

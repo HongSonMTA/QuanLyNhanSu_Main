@@ -55,7 +55,7 @@ namespace QuanLyNhanSu_DAL
         }
         public string TangMa()
         {
-            return conn.TangMa("Select * From PhongBan");
+            return conn.TangMa("Select * From PhongBan","PB");
         }
     }
 }

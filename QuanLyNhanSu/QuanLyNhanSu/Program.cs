@@ -16,7 +16,11 @@ namespace QuanLyNhanSu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new frmTGCTxCV());
+=======
+            Application.Run(new frmTDHV());
+>>>>>>> d52009b58d10deaeddee5a6fe883983c362438c0
         }
     }
 }
