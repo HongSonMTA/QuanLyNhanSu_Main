@@ -90,45 +90,7 @@ AS
 BEGIN
 SELECT * FROM dbo.NguoiDung WHERE TaiKhoan=@TaiKhoan AND MatKhau=@MatKhau
 END
-GO
 
-CREATE PROC SP_TDHV_SelectAll
-AS
-BEGIN
-SELECT * FROM dbo.TrinhDoHocVan
-END
-GO
-CREATE PROC SP_TDHV_SelectByID (@MaTDHV INT )
-AS
-BEGIN
-		SELECT * FROM dbo.TrinhDoHocVan WHERE MaTDHV = @MaTDHV
-END
-GO
-
-CREATE PROC SP_Them_TDHV (@MaTDHV VARCHAR(10),@TenTDHV NVARCHAR(50),@ChuyenNganh NVARCHAR(50))
-AS
-BEGIN
-	INSERT dbo.TrinhDoHocVan
-	VALUES  ( @MaTDHV, @TenTDHV,@ChuyenNganh)
-END
-
-GO
-CREATE PROC SP_Sua_TDHV (@MaTDHV VARCHAR(10),@TenTDHV NVARCHAR(50),@ChuyenNganh NVARCHAR(50))
-AS
-BEGIN
-	UPDATE dbo.TrinhDoHocVan
-	SET TenTrinhDo =@TenTDHV,ChuyenNganh=@ChuyenNganh
-	WHERE MaTDHV=@MaTDHV
-END
-
-GO 
-CREATE PROC SP_Xoa_TDHV (@MaTDHV varchar(10))
-AS
-BEGIN
-		DELETE dbo.TrinhDoHocVan WHERE MaTDHV = @MaTDHV
-END
-
-GO
 -- Ánh- Thủ tục Nhân Viên
 -- Hiện ra danh sách Nhân Viên
 GO

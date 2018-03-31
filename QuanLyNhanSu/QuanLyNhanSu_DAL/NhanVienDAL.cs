@@ -80,9 +80,5 @@ namespace QuanLyNhanSu_DAL
             }
             return Helper.ToListof<NhanVienEntity>(conn.GetData("SELECT * FROM dbo.NhanVien"));
         }
-        //public string TangMa()
-        //{
-        //    return conn.TangMa("Select * from NhanVien", "NV");
-        //}
     }
 }

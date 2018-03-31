@@ -28,9 +28,5 @@ namespace QuanLyNhanSu_BUS
         {
             return da.DeleteData(ID);
         }
-        //public string TangMa()
-        //{
-        //    return da.TangMa();
-        //}
     }
 }
