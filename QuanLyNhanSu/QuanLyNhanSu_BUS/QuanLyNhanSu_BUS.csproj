@@ -45,6 +45,7 @@
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="PhongBanBus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrinhDoHocVanBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuanLyNhanSu_DAL\QuanLyNhanSu_DAL.csproj">
