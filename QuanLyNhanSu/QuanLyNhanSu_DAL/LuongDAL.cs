@@ -51,6 +51,11 @@ namespace QuanLyNhanSu_DAL
         };
             return conn.ExcuteSQL("SP_XoaLuong ", para);
         }
+
+        public string TangMa()
+        {
+            return conn.TangMa("Select * From Luong", "L");
+        }
     }
 }
 

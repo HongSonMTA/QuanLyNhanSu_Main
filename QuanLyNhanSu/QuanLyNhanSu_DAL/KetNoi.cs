@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+
 namespace QuanLyNhanSu_DAL
 {
     public class KetNoi
@@ -12,7 +13,7 @@ namespace QuanLyNhanSu_DAL
        private SqlConnection conn;
         public KetNoi()
         {
-            conn = new SqlConnection(@"Data Source=NGOCANH\NGOCANH;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
+            conn = new SqlConnection(@"Data Source=THANHVUONG\SQLEXPRESS88;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
         }
         public DataTable GetData(string strSql)
         {
@@ -23,7 +24,7 @@ namespace QuanLyNhanSu_DAL
             conn.Close();
             return dt;
         }
-        public string TangMa(String sql,string Ma)
+        public string TangMa(string sql,string Ma)
         {    
             SqlCommand cm = new SqlCommand(sql, conn);      // bắt đầu truy vấn
             cm.CommandType = CommandType.Text;
