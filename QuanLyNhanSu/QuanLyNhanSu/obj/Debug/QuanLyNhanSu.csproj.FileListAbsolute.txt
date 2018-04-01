@@ -74,3 +74,6 @@ C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\o
 C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.frmTDHV.resources
 C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\Dapper.dll
 C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\Dapper.xml
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\Dapper.dll
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\Dapper.xml
+G:\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.frmTDHV.resources

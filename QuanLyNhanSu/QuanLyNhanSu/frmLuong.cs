@@ -16,7 +16,7 @@ namespace QuanLyNhanSu
     {
         LuongEntity obj = new LuongEntity();
         LuongBus Bus = new LuongBus();
-        private int fluu = 0;
+        private int fluu = 1;
         public frmLuong()
         {
             InitializeComponent();
@@ -33,8 +33,6 @@ namespace QuanLyNhanSu
             txtLuongCoBan.Enabled = e;
             txtHeSoPhuCap.Enabled = e;
             txtHeSoLuong.Enabled = e;         
-            txtTimKiem.Enabled = e;
-            cmbTimKiem.Enabled = e;
         }
         private void clearData()
         {
@@ -56,10 +54,21 @@ namespace QuanLyNhanSu
 
         private void dgvLuong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtBacLuong.Text = Convert.ToString(dgvLuong.CurrentRow.Cells["BacLuong"].Value);
-            txtLuongCoBan.Text = Convert.ToString(dgvLuong.CurrentRow.Cells["LuongCoBan"].Value);
-            txtHeSoLuong.Text = Convert.ToString(dgvLuong.CurrentRow.Cells["HeSoLuong"].Value);
-            txtHeSoPhuCap.Text = Convert.ToString(dgvLuong.CurrentRow.Cells["HeSoPhuCap"].Value);
+            if(fluu == 0)
+            {
+                //txtBacLuong.Text = Convert.ToString(dgvLuong.CurrentRow.Cells["BacLuong"].Value);
+                txtLuongCoBan.Text = Convert.ToString(dgvLuong.CurrentRow.Cells["LuongCoBan"].Value);
+                txtHeSoLuong.Text = Convert.ToString(dgvLuong.CurrentRow.Cells["HeSoLuong"].Value);
+                txtHeSoPhuCap.Text = Convert.ToString(dgvLuong.CurrentRow.Cells["HeSoPhuCap"].Value);
+            }
+            else
+            {
+                txtBacLuong.Text = Convert.ToString(dgvLuong.CurrentRow.Cells["BacLuong"].Value);
+                txtLuongCoBan.Text = Convert.ToString(dgvLuong.CurrentRow.Cells["LuongCoBan"].Value);
+                txtHeSoLuong.Text = Convert.ToString(dgvLuong.CurrentRow.Cells["HeSoLuong"].Value);
+                txtHeSoPhuCap.Text = Convert.ToString(dgvLuong.CurrentRow.Cells["HeSoPhuCap"].Value);
+            }
+            
         }
 
         private void dgvLuong_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
@@ -70,13 +79,16 @@ namespace QuanLyNhanSu
         private void btnThem_Click(object sender, EventArgs e)
         {
             fluu = 0;
+            //txtBacLuong.Text = Bus.TangMa();
             DisEnl(true);
+           // txtBacLuong.Enabled = false;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            fluu = 1;
+            fluu = 1;           
             DisEnl(true);
+            txtBacLuong.Enabled = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -112,6 +124,7 @@ namespace QuanLyNhanSu
                 HienThi();
                 clearData();
                 DisEnl(false);
+                fluu = 1;
             }
             else
             {
@@ -130,6 +143,7 @@ namespace QuanLyNhanSu
             {
                 HienThi();
                 DisEnl(false);
+                fluu = 1;
             }
             else
                 return;
@@ -144,6 +158,11 @@ namespace QuanLyNhanSu
             }
             else
                 HienThi();
+        }
+
+        private void dgvLuong_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

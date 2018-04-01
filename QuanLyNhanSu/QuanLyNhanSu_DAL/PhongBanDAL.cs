@@ -30,7 +30,7 @@ namespace QuanLyNhanSu_DAL
                 new SqlParameter("MaTP",pb.MaTP),
                 new SqlParameter("DiaChi",pb.DiaChi),
                 new SqlParameter ("Sdt",pb.Sdt)               
-        };
+            };
             return conn.ExcuteSQL("Them_PB ", para);
         }
         public int UpdateData(PhongBanEntity pb)

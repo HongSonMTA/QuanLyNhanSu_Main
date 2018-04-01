@@ -31,5 +31,9 @@ namespace QuanLyNhanSu_BUS
         {
             return luong_DAL.DeleteData(ID);
         }
+        public string TangMa()
+        {
+            return luong_DAL.TangMa();
+        }
     }
 }
