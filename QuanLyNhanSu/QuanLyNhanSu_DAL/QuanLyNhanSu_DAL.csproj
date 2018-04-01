@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChucVuDAL.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="KetNoi.cs" />
     <Compile Include="LuongDAL.cs" />
@@ -47,6 +48,7 @@
     <Compile Include="NhanVienDAL.cs" />
     <Compile Include="PhongBanDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThoiGianCongTacDAL.cs" />
     <Compile Include="TrinhDoHocVAnDAL.cs" />
   </ItemGroup>
   <ItemGroup>

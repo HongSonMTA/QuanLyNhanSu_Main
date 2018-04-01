@@ -18,7 +18,7 @@ namespace QuanLyNhanSu_Entity
             MaCV = "";
             NgayNhanChuc = DateTime.Parse("9/6/1997");
         }
-        public ThoiGianCongTacEntity(string _MaNV,string _MaCV,DateTime _NgayNhanChuc)
+        public ThoiGianCongTacEntity(string _MaNV, string _MaCV, DateTime _NgayNhanChuc)
         {
             MaNV = _MaNV;
             MaCV = _MaCV;

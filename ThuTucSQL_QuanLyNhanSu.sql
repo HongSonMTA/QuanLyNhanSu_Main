@@ -165,7 +165,7 @@ END
 
 -- Sửa Nhân Viên
 GO
-ALTER PROC SuaNV(@MaNV VARCHAR(10), @HoTen NVARCHAR(50), @DanToc NVARCHAR(50), @GioiTinh BIT, @SDT CHAR(15), @QueQuan NVARCHAR(50), @NgaySinh DATE, @MaTDHV VARCHAR(10), @MaPB VARCHAR(10), @BacLuong INT)
+CREATE PROC SuaNV(@MaNV VARCHAR(10), @HoTen NVARCHAR(50), @DanToc NVARCHAR(50), @GioiTinh BIT, @SDT CHAR(15), @QueQuan NVARCHAR(50), @NgaySinh DATE, @MaTDHV VARCHAR(10), @MaPB VARCHAR(10), @BacLuong INT)
 AS
 BEGIN
 UPDATE dbo.NhanVien
@@ -181,3 +181,86 @@ BEGIN
 DELETE dbo.NhanVien
 WHERE MaNV=@MaNV
 END
+
+--Cường---
+--Thủ tục thời gian công tác--
+CREATE PROC SPTGCTSELECTAll1
+AS
+BEGIN
+SELECT * FROM dbo.ThoiGianCongTac
+END
+GO
+CREATE PROC SPTGCTSELECTBYID (@manv VARCHAR(10) )
+AS
+BEGIN
+		SELECT * FROM dbo.ThoiGianCongTac WHERE MaNV = @manv
+END
+GO
+
+CREATE PROC SPTHEMTGCT (@manv VARCHAR(10),@macv VARCHAR(10),@ngaynhanchuc DATE)
+AS
+BEGIN
+	INSERT dbo.ThoiGianCongTac
+	        ( MaNV, MaCV, NgayNhanChuc )
+	VALUES  ( @manv,@macv,@ngaynhanchuc)
+	
+END
+
+GO
+CREATE PROC SPSUATGCT (@manv VARCHAR(10),@macv VARCHAR(10),@ngaynhanchuc DATE)
+AS
+BEGIN
+	UPDATE dbo.ThoiGianCongTac
+	SET MaCV=@macv,NgayNhanChuc=@ngaynhanchuc
+	WHERE MaNV=@manv
+END
+
+GO 
+CREATE PROC SPXOATGCT (@manv varchar(10))
+AS
+BEGIN
+		DELETE dbo.ThoiGianCongTac WHERE MaNV=@manv
+END
+
+GO
+
+--Thủ tục chức vụ--
+CREATE PROC SPCVSELECTAll
+AS
+BEGIN
+SELECT * FROM dbo.ChucVu
+END
+GO
+CREATE PROC SPCVSELECTBYID (@machucvu VARCHAR(10) )
+AS
+BEGIN
+		SELECT * FROM dbo.ChucVu WHERE MaChucVu = @machucvu
+END
+GO
+
+CREATE PROC SPTHEMCV (@machucvu VARCHAR(10),@tenchucvu NVARCHAR(50))
+AS
+BEGIN
+	INSERT dbo.ChucVu
+	        ( MaChucVu, TenChucVu )
+	VALUES  ( @machucvu,@tenchucvu)
+	
+END
+
+GO
+CREATE PROC SPSUACV (@machucvu VARCHAR(10),@tenchucvu NVARCHAR(50))
+AS
+BEGIN
+	UPDATE dbo.ChucVu
+	SET TenChucVu=@tenchucvu
+	WHERE MaChucVu=@machucvu
+END
+
+GO 
+CREATE PROC SPXOACV (@machucvu varchar(10))
+AS
+BEGIN
+		DELETE dbo.ChucVu WHERE MaChucVu=@machucvu
+END
+
+GO

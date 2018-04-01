@@ -8,16 +8,16 @@ namespace QuanLyNhanSu_Entity
 {
     public class ChucVuEntity
     {
-       public string MaChucVu { get; set; }
-       public string TenChucVu { get; set; }
+        public string MaChucVu { get; set; }
+        public string TenChucVu { get; set; }
 
-       public ChucVuEntity()
+        public ChucVuEntity()
         {
             MaChucVu = "";
             TenChucVu = "";
 
         }
-        public ChucVuEntity(string _MaChucVu,string _TenChucVu)
+        public ChucVuEntity(string _MaChucVu, string _TenChucVu)
         {
             MaChucVu = _MaChucVu;
             TenChucVu = _TenChucVu;

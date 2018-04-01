@@ -54,7 +54,11 @@ namespace QuanLyNhanSu
             dgvTGCT.DataSource = bus.GetData();
             dgvChucVu.DataSource = bus1.GetData();
         }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+     
         private void frmTGCTxCV_Load(object sender, EventArgs e)
         {
             HienThi();
@@ -66,12 +70,22 @@ namespace QuanLyNhanSu
             txtMaNV.Text = Convert.ToString(dgvTGCT.CurrentRow.Cells["clmMaNV"].Value);
             txtMaCV.Text = Convert.ToString(dgvTGCT.CurrentRow.Cells["clmMaCV"].Value);
             //txtNgayNhanChuc.Text = Convert.ToString(dgvTGCT.CurrentRow.Cells["Ngày Nhận Chức"].Value);
-         
         }
 
         private void dgvTGCT_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             dgvTGCT.Rows[e.RowIndex].Cells["clmSTT"].Value = e.RowIndex + 1;
+        }
+
+        private void dgvChucVu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtMaChucVu.Text = Convert.ToString(dgvChucVu.CurrentRow.Cells["clmMaCV1"].Value);
+            txtTenChucVu.Text = Convert.ToString(dgvChucVu.CurrentRow.Cells["clmTenCV"].Value);
+        }
+
+        private void dgvChucVu_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            dgvChucVu.Rows[e.RowIndex].Cells["clmSTT1"].Value = e.RowIndex + 1;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -88,6 +102,7 @@ namespace QuanLyNhanSu
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+
             fluu = 1;
             DisEnl(true);
         }
@@ -100,6 +115,7 @@ namespace QuanLyNhanSu
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
@@ -119,6 +135,7 @@ namespace QuanLyNhanSu
 
         private void btnXoa1_Click(object sender, EventArgs e)
         {
+
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
@@ -140,7 +157,7 @@ namespace QuanLyNhanSu
         {
             obj.MaNV = txtMaNV.Text;
             obj.MaCV = txtMaCV.Text;
-            obj.NgayNhanChuc = dtpTGCT.Value;
+            obj.NgayNhanChuc = dtpNgayNhanChuc.Value;
 
             if (fluu == 0)
             {
@@ -188,6 +205,7 @@ namespace QuanLyNhanSu
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+
             DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn hủy thao tác đang làm không?", "Xác Nhận Hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
@@ -226,17 +244,6 @@ namespace QuanLyNhanSu
             {
                 HienThi();
             }
-        }
-
-        private void dgvChucVu_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-        {
-            dgvChucVu.Rows[e.RowIndex].Cells["clmSTT1"].Value = e.RowIndex + 1;
-        }
-
-        private void dgvChucVu_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtMaChucVu.Text = Convert.ToString(dgvChucVu.CurrentRow.Cells["clmMaCV1"].Value);
-            txtTenChucVu.Text = Convert.ToString(dgvChucVu.CurrentRow.Cells["clmTenCV"].Value);
         }
     }
 }

@@ -14,13 +14,13 @@ namespace QuanLyNhanSu_DAL
         KetNoi conn = new KetNoi();
         public DataTable GetData()
         {
-            return conn.GetData("SP_TGCTSELECTALL", null);
+            return conn.GetData("SPTGCTSELECTAll1", null);
         }
 
         public DataTable GetDataByID(string ID)
         {
             SqlParameter[] para = { new SqlParameter("MaNV", ID) };
-            return conn.GetData("SP_TGCTIDSELECT", para);
+            return conn.GetData("SPTGCTSELECTBYID", para);
         }
 
         public int InsertData(ThoiGianCongTacEntity TGCT)
@@ -30,7 +30,7 @@ namespace QuanLyNhanSu_DAL
                 new SqlParameter("MaCV", TGCT.MaCV),
                 new SqlParameter("NgayNhanChuc", TGCT.NgayNhanChuc),
             };
-            return conn.ExcuteSQL("SP_ThemTGCT", para);
+            return conn.ExcuteSQL("SPTHEMTGCT", para);
         }
 
         public int UpdateData(ThoiGianCongTacEntity TGCT)
@@ -40,7 +40,7 @@ namespace QuanLyNhanSu_DAL
                 new SqlParameter("MaCV", TGCT.MaCV),
                 new SqlParameter("NgayNhanChuc", TGCT.NgayNhanChuc),
             };
-            return conn.ExcuteSQL("SP_SuaTGCT", para);
+            return conn.ExcuteSQL("SPSUATGCT", para);
         }
 
         public int DeleteData(string ID)
@@ -49,7 +49,7 @@ namespace QuanLyNhanSu_DAL
             {
                 new SqlParameter("MaNV",ID)
             };
-            return conn.ExcuteSQL("SP_XoaTGCT", para);
+            return conn.ExcuteSQL("SPXOATGCT", para);
         }
     }
 }

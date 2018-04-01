@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using QuanLyNhanSu_Entity;
 using System.Data;
 using System.Data.SqlClient;
+
 namespace QuanLyNhanSu_DAL
 {
     public class ChucVuDAL
@@ -14,13 +15,13 @@ namespace QuanLyNhanSu_DAL
 
         public DataTable GetData()
         {
-            return conn.GetData("SP_CHUCVUSELECTALL", null);
+            return conn.GetData("SPCVSELECTAll", null);
         }
 
         public DataTable GetDataByID(string ID)
         {
             SqlParameter[] para = { new SqlParameter("MaChucVu", ID) };
-            return conn.GetData("SP_CHUCVUIDSELECT", para);
+            return conn.GetData("SPCVSELECTBYID", para);
         }
 
         public int InsertData(ChucVuEntity ChucVu)
@@ -30,7 +31,7 @@ namespace QuanLyNhanSu_DAL
                 new SqlParameter("MaChucVu",ChucVu.MaChucVu),
                 new SqlParameter("TenChucVu",ChucVu.TenChucVu)
             };
-            return conn.ExcuteSQL("SP_ThemCHUCVU", para);
+            return conn.ExcuteSQL("SPTHEMCV", para);
         }
 
         public int UpdateData(ChucVuEntity ChucVu)
@@ -40,7 +41,7 @@ namespace QuanLyNhanSu_DAL
                 new SqlParameter("MaChucVu",ChucVu.MaChucVu),
                 new SqlParameter("TenChucVu",ChucVu.TenChucVu)
             };
-            return conn.ExcuteSQL("SP_SuaCHUCVU", para);
+            return conn.ExcuteSQL("SPSUACV", para);
         }
 
         public int DeleteData(string ID)
@@ -49,7 +50,7 @@ namespace QuanLyNhanSu_DAL
             {
                 new SqlParameter("MaChucVu",ID)
             };
-            return conn.ExcuteSQL("SP_XoaCHUCVU", para);
+            return conn.ExcuteSQL("SPXOACV", para);
         }
     }
 }
