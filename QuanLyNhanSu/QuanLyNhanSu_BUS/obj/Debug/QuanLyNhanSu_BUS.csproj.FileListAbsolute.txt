@@ -25,17 +25,6 @@ C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BU
 C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_Entity.dll
 C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_DAL.pdb
 C:\Users\NgocAnh\Documents\GitHub\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_Entity.pdb
-<<<<<<< HEAD
-D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_BUS.dll
-D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_BUS.pdb
-D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_DAL.dll
-D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_Entity.dll
-D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_DAL.pdb
-D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_Entity.pdb
-D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\obj\Debug\QuanLyNhanSu_BUS.csprojResolveAssemblyReference.cache
-D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\obj\Debug\QuanLyNhanSu_BUS.dll
-D:\GitHub\QLNS\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\obj\Debug\QuanLyNhanSu_BUS.pdb
-=======
 C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_BUS.dll
 C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_BUS.pdb
 C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\bin\Debug\QuanLyNhanSu_DAL.dll
@@ -45,4 +34,3 @@ C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_B
 C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\obj\Debug\QuanLyNhanSu_BUS.csprojResolveAssemblyReference.cache
 C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\obj\Debug\QuanLyNhanSu_BUS.dll
 C:\Users\ADMIN\Desktop\QLNSBRANCH1\QuanLyNhanSu_Main\QuanLyNhanSu\QuanLyNhanSu_BUS\obj\Debug\QuanLyNhanSu_BUS.pdb
->>>>>>> d52009b58d10deaeddee5a6fe883983c362438c0
