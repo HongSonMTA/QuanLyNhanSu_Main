@@ -54,7 +54,7 @@ namespace QuanLyNhanSu_DAL
 
         public string TangMa()
         {
-            return conn.TangMa("Select * From Luong", "L");
+            return conn.TangMa("Select * From Luong ", "L");
         }
     }
 }

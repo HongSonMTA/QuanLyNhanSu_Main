@@ -1,4 +1,4 @@
-QuanLyNhanSu/QuanLyNhanSu/bin/Debug/QuanLyNhanSu.exe
+QuanLyNhanSu/.vs/*
 QuanLyNhanSu/QuanLyNhanSu/bin/*
 QuanLyNhanSu/QuanLyNhanSu/obj/*
 QuanLyNhanSu/QuanLyNhanSu_BUS/bin/*
@@ -7,4 +7,3 @@ QuanLyNhanSu/QuanLyNhanSu_DAL/bin/*
 QuanLyNhanSu/QuanLyNhanSu_DAL/obj/*
 QuanLyNhanSu/QuanLyNhanSu_Entity/bin/*
 QuanLyNhanSu/QuanLyNhanSu_Entity/obj/*
-QuanLyNhanSu/.vs/QuanLyNhanSu/v14/.suo

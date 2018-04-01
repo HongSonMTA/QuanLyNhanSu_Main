@@ -52,6 +52,7 @@ BEGIN
 	INSERT dbo.Luong( BacLuong ,LuongCoBan ,HeSoLuong ,HeSoPhuCap)
 	VALUES  (@BacLuong, @LuongCoBan, @HeSoLuong, @HeSoPhuCap)
 END 
+GO 
 EXEC SP_ThemLuong '1','6000000','1','1'
 
 GO
@@ -61,6 +62,7 @@ BEGIN
 	UPDATE dbo.Luong SET LuongCoBan = @LuongCoBan, HeSoLuong = @HeSoLuong, HeSoPhuCap = @HeSoPhuCap
 	WHERE BacLuong = @BacLuong
 END
+GO 
 EXEC SP_SuaLuong '1','6500000','1','1'
 
 GO

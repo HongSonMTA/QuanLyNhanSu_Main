@@ -79,9 +79,9 @@ namespace QuanLyNhanSu
         private void btnThem_Click(object sender, EventArgs e)
         {
             fluu = 0;
-            //txtBacLuong.Text = Bus.TangMa();
+           // txtBacLuong.Text = Bus.TangMa();
             DisEnl(true);
-           // txtBacLuong.Enabled = false;
+            //txtBacLuong.Enabled = false;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
