@@ -113,5 +113,12 @@ namespace QuanLyNhanSu
         {
             timer1.Enabled = true;
         }
+
+        private void hướngDãnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Helps.chm");
+        }
+
+       
     }
 }
