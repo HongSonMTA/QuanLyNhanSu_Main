@@ -98,5 +98,20 @@ namespace QuanLyNhanSu
             tg.Show();
             this.Hide();
         }
+        private int i = 10;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbchuchay.Location = new Point(lbchuchay.Location.X +i,lbchuchay.Location.Y);
+
+            if(lbchuchay.Location.X > 693 ||lbchuchay.Location.Y <= 0)
+            {
+                lbchuchay.Location = new Point(lbchuchay.Location.X-1300, lbchuchay.Location.Y);
+            }
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+        }
     }
 }

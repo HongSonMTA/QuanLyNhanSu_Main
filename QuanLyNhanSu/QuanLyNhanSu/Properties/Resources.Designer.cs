@@ -133,6 +133,16 @@ namespace QuanLyNhanSu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LogoHV {
+            get {
+                object obj = ResourceManager.GetObject("LogoHV", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap text_rich_marked {
             get {
                 object obj = ResourceManager.GetObject("text_rich_marked", resourceCulture);
