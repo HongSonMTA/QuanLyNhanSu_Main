@@ -58,15 +58,14 @@ namespace QuanLyNhanSu_DAL
         };
             return conn.ExcuteSQL("XoaNV", para);
         }
-        //public int MaPB(string ID)
-        //{
-
-        //    SqlParameter[] para =
-        //    {
-        //        new SqlParameter("MaPB",ID)
-        //};
-        //    return conn.ExcuteSQL("DSMaPB", para);
-        //}
+        public int show_MaPB(string ID)
+        {
+            SqlParameter[] para =
+            {
+                new SqlParameter("MaPB",ID)
+            };
+            return conn.ExcuteSQL("DSMaPB", para);
+        }
         public string TangMa()
         {
             return conn.TangMa("Select * From NhanVien", "NV");

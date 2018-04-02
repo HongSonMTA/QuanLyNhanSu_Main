@@ -32,6 +32,10 @@ namespace QuanLyNhanSu_BUS
         {
             return da.DeleteData(ID);
         }
+        public int show_MaPB(string ID)
+        {
+            return da.show_MaPB(ID);
+        }
         //public string TangMa()
         //{
         //    return da.TangMa();

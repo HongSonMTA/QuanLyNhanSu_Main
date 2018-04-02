@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using QuanLyNhanSu_DAL;
 
 namespace QuanLyNhanSu
 {
@@ -152,6 +153,10 @@ namespace QuanLyNhanSu
             txtTimKiem.Enabled = false;
             cbTimKiem.Enabled = false;
             HienThi();
+        }
+        private void show_cbMaPB()
+        {
+            Bus.show_MaPB(cbMaPB.Text);
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
