@@ -25,7 +25,18 @@ namespace QuanLyNhanSu
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Xác Nhận Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                frmMain m = new frmMain();
+                m.Show();
+                this.Close();
+
+            }
+            else
+            {
+                HienThi();
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

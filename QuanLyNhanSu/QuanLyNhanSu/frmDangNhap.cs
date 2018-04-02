@@ -23,8 +23,9 @@ namespace QuanLyNhanSu
         {
             ndbus.DangNhap(txtTaiKhoan.Text, txtMatKhau.Text);
             this.Hide();
-            frmphongBan pb = new frmphongBan();
-            pb.Show();
+            frmMain m = new frmMain();
+            m.Show();
+            
             
         }
 

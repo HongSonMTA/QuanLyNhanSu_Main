@@ -237,7 +237,9 @@ namespace QuanLyNhanSu
             DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Xác Nhận Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
-                Application.Exit();
+                frmMain m = new frmMain();
+                m.Show();
+                this.Close();
 
             }
             else

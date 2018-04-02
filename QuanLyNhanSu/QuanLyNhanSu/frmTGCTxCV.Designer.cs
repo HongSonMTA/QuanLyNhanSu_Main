@@ -30,39 +30,39 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTGCTxCV));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpNgayNhanChuc = new System.Windows.Forms.DateTimePicker();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.lbNgayNhanChuc = new System.Windows.Forms.Label();
+            this.lbMaNV = new System.Windows.Forms.Label();
+            this.txtMaCV = new System.Windows.Forms.TextBox();
+            this.lbMaCV = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.dgvTGCT = new System.Windows.Forms.DataGridView();
             this.clmSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMaCV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNgayNhanChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtTenChucVu = new System.Windows.Forms.TextBox();
+            this.lbTenChucVu = new System.Windows.Forms.Label();
+            this.txtMaChucVu = new System.Windows.Forms.TextBox();
+            this.lbMaChucVu = new System.Windows.Forms.Label();
             this.btnHuy1 = new System.Windows.Forms.Button();
             this.btnLuu1 = new System.Windows.Forms.Button();
             this.btnXoa1 = new System.Windows.Forms.Button();
             this.btnSua1 = new System.Windows.Forms.Button();
             this.btnThem1 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvChucVu = new System.Windows.Forms.DataGridView();
             this.clmSTT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMaCV1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTenCV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbMaCV = new System.Windows.Forms.Label();
-            this.txtMaCV = new System.Windows.Forms.TextBox();
-            this.lbMaNV = new System.Windows.Forms.Label();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.lbNgayNhanChuc = new System.Windows.Forms.Label();
-            this.dtpNgayNhanChuc = new System.Windows.Forms.DateTimePicker();
-            this.lbMaChucVu = new System.Windows.Forms.Label();
-            this.txtMaChucVu = new System.Windows.Forms.TextBox();
-            this.lbTenChucVu = new System.Windows.Forms.Label();
-            this.txtTenChucVu = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTGCT)).BeginInit();
@@ -90,6 +90,54 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin thời gian công tác";
+            // 
+            // dtpNgayNhanChuc
+            // 
+            this.dtpNgayNhanChuc.Location = new System.Drawing.Point(104, 56);
+            this.dtpNgayNhanChuc.Name = "dtpNgayNhanChuc";
+            this.dtpNgayNhanChuc.Size = new System.Drawing.Size(200, 20);
+            this.dtpNgayNhanChuc.TabIndex = 20;
+            // 
+            // txtMaNV
+            // 
+            this.txtMaNV.Location = new System.Drawing.Point(90, 19);
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(100, 20);
+            this.txtMaNV.TabIndex = 19;
+            // 
+            // lbNgayNhanChuc
+            // 
+            this.lbNgayNhanChuc.AutoSize = true;
+            this.lbNgayNhanChuc.Location = new System.Drawing.Point(9, 63);
+            this.lbNgayNhanChuc.Name = "lbNgayNhanChuc";
+            this.lbNgayNhanChuc.Size = new System.Drawing.Size(89, 13);
+            this.lbNgayNhanChuc.TabIndex = 18;
+            this.lbNgayNhanChuc.Text = "Ngày Nhận Chức";
+            // 
+            // lbMaNV
+            // 
+            this.lbMaNV.AutoSize = true;
+            this.lbMaNV.Location = new System.Drawing.Point(9, 26);
+            this.lbMaNV.Name = "lbMaNV";
+            this.lbMaNV.Size = new System.Drawing.Size(75, 13);
+            this.lbMaNV.TabIndex = 18;
+            this.lbMaNV.Text = "Mã Nhân Viên";
+            // 
+            // txtMaCV
+            // 
+            this.txtMaCV.Location = new System.Drawing.Point(276, 19);
+            this.txtMaCV.Name = "txtMaCV";
+            this.txtMaCV.Size = new System.Drawing.Size(100, 20);
+            this.txtMaCV.TabIndex = 19;
+            // 
+            // lbMaCV
+            // 
+            this.lbMaCV.AutoSize = true;
+            this.lbMaCV.Location = new System.Drawing.Point(204, 22);
+            this.lbMaCV.Name = "lbMaCV";
+            this.lbMaCV.Size = new System.Drawing.Size(66, 13);
+            this.lbMaCV.TabIndex = 18;
+            this.lbMaCV.Text = "Mã Chức Vụ";
             // 
             // btnHuy
             // 
@@ -173,20 +221,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách thời gian công tác";
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThoat.Location = new System.Drawing.Point(391, 56);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(68, 61);
-            this.btnThoat.TabIndex = 8;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // dgvTGCT
             // 
             this.dgvTGCT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -230,6 +264,20 @@
             this.clmNgayNhanChuc.HeaderText = "Ngày Nhận Chức";
             this.clmNgayNhanChuc.Name = "clmNgayNhanChuc";
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnThoat.Location = new System.Drawing.Point(391, 56);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(68, 61);
+            this.btnThoat.TabIndex = 8;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtTenChucVu);
@@ -249,15 +297,39 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin chức vụ";
             // 
-            // groupBox4
+            // txtTenChucVu
             // 
-            this.groupBox4.Controls.Add(this.dgvChucVu);
-            this.groupBox4.Location = new System.Drawing.Point(0, 178);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(327, 199);
-            this.groupBox4.TabIndex = 0;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Danh sách chức vụ";
+            this.txtTenChucVu.Location = new System.Drawing.Point(108, 63);
+            this.txtTenChucVu.Name = "txtTenChucVu";
+            this.txtTenChucVu.Size = new System.Drawing.Size(100, 20);
+            this.txtTenChucVu.TabIndex = 24;
+            this.txtTenChucVu.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // lbTenChucVu
+            // 
+            this.lbTenChucVu.AutoSize = true;
+            this.lbTenChucVu.Location = new System.Drawing.Point(15, 63);
+            this.lbTenChucVu.Name = "lbTenChucVu";
+            this.lbTenChucVu.Size = new System.Drawing.Size(70, 13);
+            this.lbTenChucVu.TabIndex = 23;
+            this.lbTenChucVu.Text = "Tên Chức Vụ";
+            // 
+            // txtMaChucVu
+            // 
+            this.txtMaChucVu.Location = new System.Drawing.Point(108, 23);
+            this.txtMaChucVu.Name = "txtMaChucVu";
+            this.txtMaChucVu.Size = new System.Drawing.Size(100, 20);
+            this.txtMaChucVu.TabIndex = 24;
+            this.txtMaChucVu.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // lbMaChucVu
+            // 
+            this.lbMaChucVu.AutoSize = true;
+            this.lbMaChucVu.Location = new System.Drawing.Point(15, 26);
+            this.lbMaChucVu.Name = "lbMaChucVu";
+            this.lbMaChucVu.Size = new System.Drawing.Size(66, 13);
+            this.lbMaChucVu.TabIndex = 23;
+            this.lbMaChucVu.Text = "Mã Chức Vụ";
             // 
             // btnHuy1
             // 
@@ -331,6 +403,16 @@
             this.btnThem1.UseVisualStyleBackColor = true;
             this.btnThem1.Click += new System.EventHandler(this.btnThem1_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dgvChucVu);
+            this.groupBox4.Location = new System.Drawing.Point(0, 178);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(327, 199);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Danh sách chức vụ";
+            // 
             // dgvChucVu
             // 
             this.dgvChucVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -366,88 +448,6 @@
             this.clmTenCV.HeaderText = "Tên Chức Vụ";
             this.clmTenCV.Name = "clmTenCV";
             // 
-            // lbMaCV
-            // 
-            this.lbMaCV.AutoSize = true;
-            this.lbMaCV.Location = new System.Drawing.Point(204, 22);
-            this.lbMaCV.Name = "lbMaCV";
-            this.lbMaCV.Size = new System.Drawing.Size(66, 13);
-            this.lbMaCV.TabIndex = 18;
-            this.lbMaCV.Text = "Mã Chức Vụ";
-            // 
-            // txtMaCV
-            // 
-            this.txtMaCV.Location = new System.Drawing.Point(276, 19);
-            this.txtMaCV.Name = "txtMaCV";
-            this.txtMaCV.Size = new System.Drawing.Size(100, 20);
-            this.txtMaCV.TabIndex = 19;
-            // 
-            // lbMaNV
-            // 
-            this.lbMaNV.AutoSize = true;
-            this.lbMaNV.Location = new System.Drawing.Point(9, 26);
-            this.lbMaNV.Name = "lbMaNV";
-            this.lbMaNV.Size = new System.Drawing.Size(75, 13);
-            this.lbMaNV.TabIndex = 18;
-            this.lbMaNV.Text = "Mã Nhân Viên";
-            // 
-            // txtMaNV
-            // 
-            this.txtMaNV.Location = new System.Drawing.Point(90, 19);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(100, 20);
-            this.txtMaNV.TabIndex = 19;
-            // 
-            // lbNgayNhanChuc
-            // 
-            this.lbNgayNhanChuc.AutoSize = true;
-            this.lbNgayNhanChuc.Location = new System.Drawing.Point(9, 63);
-            this.lbNgayNhanChuc.Name = "lbNgayNhanChuc";
-            this.lbNgayNhanChuc.Size = new System.Drawing.Size(89, 13);
-            this.lbNgayNhanChuc.TabIndex = 18;
-            this.lbNgayNhanChuc.Text = "Ngày Nhận Chức";
-            // 
-            // dtpNgayNhanChuc
-            // 
-            this.dtpNgayNhanChuc.Location = new System.Drawing.Point(104, 56);
-            this.dtpNgayNhanChuc.Name = "dtpNgayNhanChuc";
-            this.dtpNgayNhanChuc.Size = new System.Drawing.Size(200, 20);
-            this.dtpNgayNhanChuc.TabIndex = 20;
-            // 
-            // lbMaChucVu
-            // 
-            this.lbMaChucVu.AutoSize = true;
-            this.lbMaChucVu.Location = new System.Drawing.Point(15, 26);
-            this.lbMaChucVu.Name = "lbMaChucVu";
-            this.lbMaChucVu.Size = new System.Drawing.Size(66, 13);
-            this.lbMaChucVu.TabIndex = 23;
-            this.lbMaChucVu.Text = "Mã Chức Vụ";
-            // 
-            // txtMaChucVu
-            // 
-            this.txtMaChucVu.Location = new System.Drawing.Point(108, 23);
-            this.txtMaChucVu.Name = "txtMaChucVu";
-            this.txtMaChucVu.Size = new System.Drawing.Size(100, 20);
-            this.txtMaChucVu.TabIndex = 24;
-            this.txtMaChucVu.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // lbTenChucVu
-            // 
-            this.lbTenChucVu.AutoSize = true;
-            this.lbTenChucVu.Location = new System.Drawing.Point(15, 63);
-            this.lbTenChucVu.Name = "lbTenChucVu";
-            this.lbTenChucVu.Size = new System.Drawing.Size(70, 13);
-            this.lbTenChucVu.TabIndex = 23;
-            this.lbTenChucVu.Text = "Tên Chức Vụ";
-            // 
-            // txtTenChucVu
-            // 
-            this.txtTenChucVu.Location = new System.Drawing.Point(108, 63);
-            this.txtTenChucVu.Name = "txtTenChucVu";
-            this.txtTenChucVu.Size = new System.Drawing.Size(100, 20);
-            this.txtTenChucVu.TabIndex = 24;
-            this.txtTenChucVu.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // frmTGCTxCV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,6 +458,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTGCTxCV";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmTGCTxCV";
             this.Load += new System.EventHandler(this.frmTGCTxCV_Load);
             this.groupBox1.ResumeLayout(false);

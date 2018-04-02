@@ -77,7 +77,7 @@
             // btnDangNhap
             // 
             this.btnDangNhap.Location = new System.Drawing.Point(230, 272);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(140, 34);
             this.btnDangNhap.TabIndex = 3;
@@ -88,7 +88,7 @@
             // btnThoat
             // 
             this.btnThoat.Location = new System.Drawing.Point(389, 272);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(132, 34);
             this.btnThoat.TabIndex = 4;
@@ -123,6 +123,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "frmDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDangNhap";
             this.ResumeLayout(false);
             this.PerformLayout();

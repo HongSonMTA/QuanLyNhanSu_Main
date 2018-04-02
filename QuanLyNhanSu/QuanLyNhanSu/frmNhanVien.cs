@@ -74,6 +74,8 @@ namespace QuanLyNhanSu
             DialogResult dr = MessageBox.Show("Bạn chắc chắn muốn hủy thao tác đang làm?", "Xác nhận hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
+                frmMain m = new frmMain();
+                m.Show();
                 this.Close();
             }
             else
