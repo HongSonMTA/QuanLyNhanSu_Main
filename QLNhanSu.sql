@@ -136,3 +136,8 @@ VALUES  ( @taikhoan, -- TaiKhoan - nvarchar(30)
 END
 
 GO
+
+
+-- 2/4: Sửa CSDL bảng Nhân Viên: trường Giới Tính
+ALTER TABLE dbo.NhanVien 
+ALTER COLUMN GioiTinh NVARCHAR(5)

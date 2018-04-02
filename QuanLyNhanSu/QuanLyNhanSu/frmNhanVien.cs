@@ -102,14 +102,10 @@ namespace QuanLyNhanSu
             txtMaTDHV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaTDHV"].Value);
             cbMaPB.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaPB"].Value);
             txtBacLuong.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["BacLuong"].Value);
-            //bool GT = Convert.ToString(dgvNhanVien.CurrentRow.Cells["GioiTinh"].Value);
-            //if (GT = true)
-            //{
-            //    radNam.Checked=true;
-            //}
-            //else radNu.Checked =true;
+            if (dgvNhanVien.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString() == "Nam") radNam.Checked = true;
+            else radNu.Checked = true;
 
-            
+
         }
 
         private void dgvNhanVien_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
@@ -187,12 +183,12 @@ namespace QuanLyNhanSu
 
             obj.BacLuong = _luong;
 
-            bool gt = true;
+            string gt;
             if (radNam.Checked)
             {
-                gt = true;
+                gt = "Nam";
             }
-            else gt = false;
+            else gt = "Nữ";
 
             obj.GioiTinh = gt;
             if (fluu == 0)

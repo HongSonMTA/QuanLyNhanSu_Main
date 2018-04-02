@@ -13,7 +13,7 @@ namespace QuanLyNhanSu_DAL
        private SqlConnection conn;
         public KetNoi()
         {
-            conn = new SqlConnection(@"Data Source=ManhCuong-PC;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
+            conn = new SqlConnection(@"Data Source=NGOCANH\NGOCANH;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
         }
         public DataTable GetData(string strSql)
         {
