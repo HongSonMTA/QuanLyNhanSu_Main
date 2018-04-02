@@ -26,7 +26,11 @@ namespace QuanLyNhanSu
 
         private void ToolStripMenuItemThoat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dr = MessageBox.Show("Bạn chắc chắn muốn thoát chương trình không?", "Xác nhận hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void toolStripMenuItemQuanLyNhanVien_Click(object sender, EventArgs e)
@@ -101,11 +105,11 @@ namespace QuanLyNhanSu
         private int i = 10;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lbchuchay.Location = new Point(lbchuchay.Location.X +i,lbchuchay.Location.Y);
+            lbchuchay.Location = new Point(lbchuchay.Location.X -i,lbchuchay.Location.Y);
 
-            if(lbchuchay.Location.X > 693 ||lbchuchay.Location.Y <= 0)
+            if(lbchuchay.Location.X <= -510 ||lbchuchay.Location.Y <= 0)
             {
-                lbchuchay.Location = new Point(lbchuchay.Location.X-1300, lbchuchay.Location.Y);
+                lbchuchay.Location = new Point(lbchuchay.Location.X+1300, lbchuchay.Location.Y);
             }
         }
 
@@ -119,6 +123,13 @@ namespace QuanLyNhanSu
             Help.ShowHelp(this, "Helps.chm");
         }
 
-       
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn chắc chắn muốn thoát chương trình không?", "Xác nhận hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+         }
     }
 }
