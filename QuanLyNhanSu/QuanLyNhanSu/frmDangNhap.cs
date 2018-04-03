@@ -21,12 +21,27 @@ namespace QuanLyNhanSu
         NguoiDungBUS ndbus = new NguoiDungBUS();
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            ndbus.DangNhap(txtTaiKhoan.Text, txtMatKhau.Text);
-            this.Hide();
-            frmMain m = new frmMain();
-            m.Show();
-            
-            
+            DataTable dt = new DataTable();
+            dt = ndbus.DangNhap(txtTaiKhoan.Text, txtMatKhau.Text);
+
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    nd.TaiKhoan = dt.Rows[i].ToString();
+                    nd.MatKhau = dt.Rows[i].ToString();
+                }
+                this.Hide();
+                frmMain mainn = new frmMain();
+                mainn.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Dang nhap that bai");
+            }
+
+
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
