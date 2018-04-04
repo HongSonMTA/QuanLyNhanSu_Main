@@ -17,7 +17,7 @@ namespace QuanLyNhanSu_Entity
         public DateTime NgaySinh { get; set; }
         public string MaTDHV { get; set; }
         public string MaPB { get; set; }
-        public int BacLuong { get; set; }
+        public string BacLuong { get; set; }
 
         public NhanVienEntity()
         {
@@ -30,10 +30,10 @@ namespace QuanLyNhanSu_Entity
             NgaySinh = DateTime.Parse("1/1/1997");
             MaTDHV = "";
             MaPB = "";
-            BacLuong = 0;
+            BacLuong = "";
 
         }
-        public NhanVienEntity(string _MaNV, string _HoTen, string _DanToc, string _GioiTinh, string _SDT, string _QueQuan, DateTime _NgaySinh, string _MaTDHV, string _MaPB, int _BacLuong)
+        public NhanVienEntity(string _MaNV, string _HoTen, string _DanToc, string _GioiTinh, string _SDT, string _QueQuan, DateTime _NgaySinh, string _MaTDHV, string _MaPB, string _BacLuong)
         {
             MaNV = _MaNV;
             HoTen = _HoTen;

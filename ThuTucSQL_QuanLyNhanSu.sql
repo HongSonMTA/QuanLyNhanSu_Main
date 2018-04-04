@@ -46,7 +46,7 @@ END
 
 GO
 ---- Thanh----Luong
-CREATE PROC SP_ThemLuong (@BacLuong INT, @LuongCoBan INT , @HeSoLuong INT , @HeSoPhuCap INT )
+ALTER PROC SP_ThemLuong (@BacLuong VARCHAR(10), @LuongCoBan INT , @HeSoLuong INT , @HeSoPhuCap INT )
 AS
 BEGIN
 	INSERT dbo.Luong( BacLuong ,LuongCoBan ,HeSoLuong ,HeSoPhuCap)
@@ -56,7 +56,7 @@ GO
 EXEC SP_ThemLuong '1','6000000','1','1'
 
 GO
-CREATE PROC SP_SuaLuong (@BacLuong INT, @LuongCoBan INT , @HeSoLuong INT , @HeSoPhuCap INT )
+CREATE PROC SP_SuaLuong (@BacLuong VARCHAR(10), @LuongCoBan INT , @HeSoLuong INT , @HeSoPhuCap INT )
 AS
 BEGIN
 	UPDATE dbo.Luong SET LuongCoBan = @LuongCoBan, HeSoLuong = @HeSoLuong, HeSoPhuCap = @HeSoPhuCap
@@ -66,7 +66,7 @@ GO
 EXEC SP_SuaLuong '1','6500000','1','1'
 
 GO
-CREATE PROC SP_XoaLuong(@BacLuong INT)
+CREATE PROC SP_XoaLuong(@BacLuong VARCHAR(10))
 AS
 BEGIN
 	DELETE dbo.Luong WHERE BacLuong = @BacLuong
@@ -80,7 +80,7 @@ BEGIN
 END
 
 GO
-CREATE PROC SP_Luong_SelectByID (@BacLuong INT )
+CREATE PROC SP_Luong_SelectByID (@BacLuong VARCHAR() )
 AS
 BEGIN
 		SELECT * FROM dbo.Luong WHERE BacLuong = @BacLuong
@@ -156,7 +156,7 @@ EXEC dbo.NV_SelectByID @MaNV = 'nv01' -- varchar(10)
 
 -- Thêm Nhân Viên
 GO
-ALTER PROC ThemNV(@MaNV VARCHAR(10), @HoTen NVARCHAR(50), @DanToc NVARCHAR(50), @GioiTinh NVARCHAR(5), @SDT CHAR(15), @QueQuan NVARCHAR(50), @NgaySinh DATE, @MaTDHV VARCHAR(10), @MaPB VARCHAR(10), @BacLuong INT)
+ALTER PROC ThemNV(@MaNV VARCHAR(10), @HoTen NVARCHAR(50), @DanToc NVARCHAR(50), @GioiTinh NVARCHAR(5), @SDT CHAR(15), @QueQuan NVARCHAR(50), @NgaySinh DATE, @MaTDHV VARCHAR(10), @MaPB VARCHAR(10), @BacLuong VARCHAR(10))
 AS
 BEGIN
 INSERT INTO dbo.NhanVien( MaNV , HoTen ,DanToc ,GioiTinh ,SDT ,QueQuan ,NgaySinh ,MaTDHV ,MaPB ,BacLuong)
@@ -165,11 +165,11 @@ END
 
 -- Sửa Nhân Viên
 GO
-ALTER PROC SuaNV(@MaNV VARCHAR(10), @HoTen NVARCHAR(50), @DanToc NVARCHAR(50), @GioiTinh NVARCHAR(5), @SDT CHAR(15), @QueQuan NVARCHAR(50), @NgaySinh DATE, @MaTDHV VARCHAR(10), @MaPB VARCHAR(10), @BacLuong INT)
+ALTER PROC SuaNV(@MaNV VARCHAR(10), @HoTen NVARCHAR(50), @DanToc NVARCHAR(50), @GioiTinh NVARCHAR(5), @SDT CHAR(15), @QueQuan NVARCHAR(50), @NgaySinh DATE, @MaTDHV VARCHAR(10), @MaPB VARCHAR(10), @BacLuong VARCHAR(10))
 AS
 BEGIN
 UPDATE dbo.NhanVien
-SET MaNV=@MaNV,HoTen=@HoTen,DanToc=@DanToc,GioiTinh=@GioiTinh,SDT=@SDT,QueQuan=@QueQuan,NgaySinh=@NgaySinh,MaTDHV=@MaTDHV,MaPB=@MaPB,BacLuong=@BacLuong
+SET HoTen=@HoTen,DanToc=@DanToc,GioiTinh=@GioiTinh,SDT=@SDT,QueQuan=@QueQuan,NgaySinh=@NgaySinh,MaTDHV=@MaTDHV,MaPB=@MaPB,BacLuong=@BacLuong
 WHERE MaNV=@MaNV
 END
 
@@ -264,3 +264,5 @@ BEGIN
 END
 
 GO
+
+SELECT * FROM dbo.TrinhDoHocVan

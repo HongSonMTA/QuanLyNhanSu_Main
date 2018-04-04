@@ -52,5 +52,9 @@ namespace QuanLyNhanSu_DAL
             };
             return conn.ExcuteSQL("SPXOACV", para);
         }
+        public string TangMa()
+        {
+            return conn.TangMa("select * from ChucVu", "CV");
+        }
     }
 }

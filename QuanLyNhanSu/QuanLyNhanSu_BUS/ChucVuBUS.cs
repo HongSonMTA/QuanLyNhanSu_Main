@@ -31,5 +31,9 @@ namespace QuanLyNhanSu_BUS
         {
             return chucvuDAl.DeleteData(ID);
         }
+        public string TangMa()
+        {
+            return chucvuDAl.TangMa();
+        }
     }
 }

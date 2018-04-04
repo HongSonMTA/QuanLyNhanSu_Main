@@ -16,7 +16,7 @@ namespace QuanLyNhanSu
         TrinhDoHocVan obj = new TrinhDoHocVan();
         TrinhDoHocVanBUS bus = new TrinhDoHocVanBUS();
 
-        private int fluu = 0;
+        private int fluu = 1;
         public frmTDHV()
         {
             InitializeComponent();
@@ -78,36 +78,19 @@ namespace QuanLyNhanSu
             DisEnl(false);
 
         }
-        //private void dgvTrinhDoHocVan_CellClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    txtMaTDHV.Text = Convert.ToString(dgvTrinhDoHocVan.CurrentRow.Cells["MaTDHV"].Value);
-        //    txtTenTDHV.Text = Convert.ToString(dgvTrinhDoHocVan.CurrentRow.Cells["TenTrinhDo"].Value);
-        //    txtCN.Text = Convert.ToString(dgvTrinhDoHocVan.CurrentRow.Cells["ChuyenNganh"].Value);
-        //}
-
-        private void dgvTrinhDoHocVan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvTrinhDoHocVan_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            txtMaTDHV.Text = Convert.ToString(dgvTrinhDoHocVan.CurrentRow.Cells["MaTDHV"].Value);
-            txtTenTDHV.Text = Convert.ToString(dgvTrinhDoHocVan.CurrentRow.Cells["TenTrinhDo"].Value);
-            txtCN.Text = Convert.ToString(dgvTrinhDoHocVan.CurrentRow.Cells["ChuyenNganh"].Value);
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             fluu = 0;
-            clearData();
+            txtMaTDHV.Text = bus.TangMa();
             DisEnl(true);
+            txtMaTDHV.Enabled = false;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             fluu = 1;
             DisEnl(true);
+            txtMaTDHV.Enabled = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -150,6 +133,27 @@ namespace QuanLyNhanSu
                 clearData();
                 DisEnl(false);
             }
+        }
+
+        private void dgvTrinhDoHocVan_Click(object sender, EventArgs e)
+        {
+            if (fluu == 0)
+            {
+                // txtMaTDHV.Text = Convert.ToString(dgvTrinhDoHocVan.CurrentRow.Cells["MaTDHV"].Value);
+                txtTenTDHV.Text = Convert.ToString(dgvTrinhDoHocVan.CurrentRow.Cells["TenTDHV"].Value);
+                txtCN.Text = Convert.ToString(dgvTrinhDoHocVan.CurrentRow.Cells["ChuyenNganh"].Value);
+            }
+            else
+            {
+                txtMaTDHV.Text = Convert.ToString(dgvTrinhDoHocVan.CurrentRow.Cells["MaTDHV"].Value);
+                txtTenTDHV.Text = Convert.ToString(dgvTrinhDoHocVan.CurrentRow.Cells["TenTDHV"].Value);
+                txtCN.Text = Convert.ToString(dgvTrinhDoHocVan.CurrentRow.Cells["ChuyenNganh"].Value);
+            }
+        }
+
+        private void dgvTrinhDoHocVan_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+           dgvTrinhDoHocVan.Rows[e.RowIndex].Cells["STT"].Value = e.RowIndex + 1;
         }
     }
 }

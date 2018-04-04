@@ -30,8 +30,8 @@ namespace QuanLyNhanSu_DAL
                 new SqlParameter("MaTDHV",NV.MaTDHV),
                 new SqlParameter("MaPB",NV.MaPB),
                 new SqlParameter ("BacLuong",NV.BacLuong)
-        };
-            return conn.ExcuteSQL("ThemNV ", para);
+            };
+            return conn.ExcuteSQL("ThemNV", para);
         }
         public int UpdateData(NhanVienEntity NV)
         {
@@ -57,14 +57,6 @@ namespace QuanLyNhanSu_DAL
                 new SqlParameter("MaNV",ID)
         };
             return conn.ExcuteSQL("XoaNV", para);
-        }
-        public int show_MaPB(string ID)
-        {
-            SqlParameter[] para =
-            {
-                new SqlParameter("MaPB",ID)
-            };
-            return conn.ExcuteSQL("DSMaPB", para);
         }
         public string TangMa()
         {

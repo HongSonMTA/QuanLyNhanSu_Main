@@ -9,11 +9,10 @@ TenChucVu nvarchar(50))
 
 go
 create table Luong(
-BacLuong int primary key,
+BacLuong VARCHAR(10) primary key,
 LuongCoBan INT ,
 HeSoLuong int,
 HeSoPhuCap int)
-
 GO
 create table PhongBan(
 MaPB VARCHAR(10) primary key,
@@ -33,13 +32,13 @@ create table NhanVien(
 MaNV varchar(10) primary key,
 HoTen nvarchar(50),
 DanToc nvarchar(50),
-GioiTinh BIT,
+GioiTinh NVARCHAR(5) CHECK(GioiTinh IN (N'Nam',N'Nữ')),
 SDT CHAR(15),
 QueQuan nvarchar(50),
 NgaySinh date,
 MaTDHV VARCHAR(10) REFERENCES TrinhDoHocVan(MaTDHV),
 MaPB VARCHAR(10) references PhongBan(MaPB),
-BacLuong int references Luong(BacLuong)
+BacLuong VARCHAR(10) references Luong(BacLuong)
 )
 
 GO
@@ -70,7 +69,7 @@ VALUES  ( N'user1', -- TaiKhoan - nvarchar(30)
 
 go
 insert into NhanVien(MaNV,HoTen,DanToc,GioiTinh,SDT,QueQuan,NgaySinh)
-values ('NV01',N'Hoàng Thị Minh','kinh',1,'0976986543',N'Hà Nội','09-08-1990'),
+values ('NV01',N'Hoàng Thị Minh',N'kinh',N'Nữ','0976986543',N'Hà Nội','09-08-1990'),
 ('NV02',N'Nguyễn Quang Huy','kinh',0,'0973686583',N'Vĩnh Phúc','10-19-1990'),
 ('NV03',N'Ngô Hữu Huy','kinh',0,'0976639201',N'Hà Nam','03-20-1993'),
 ('NV04',N'Bùi Trung Kiên','kinh',0,'0976863496',N'Hà Nội','12-08-1992'),
@@ -96,9 +95,11 @@ INSERT dbo.ThoiGianCongTac
         ( MaNV, MaCV, NgayNhanChuc )
 VALUES  ( 'NV06','CV04','04/20/2013')
 
-
-DELETE FROM dbo.ThoiGianCongTac
-DELETE FROM dbo.ChucVu
+INSERT INTO dbo.TrinhDoHocVan
+        ( MaTDHV, TenTrinhDo, ChuyenNganh )
+VALUES  ( 'TD01', -- MaTDHV - varchar(10)
+          N'Đại Học ', -- TenTrinhDo - nvarchar(50)
+          N'CNTT')
 INSERT INTO dbo.ChucVu
         ( MaChucVu, TenChucVu )
 VALUES  ('CV01',N'Giám Đốc')
@@ -136,6 +137,14 @@ VALUES  ( @taikhoan, -- TaiKhoan - nvarchar(30)
 END
 
 GO
+INSERT INTO dbo.PhongBan 
+        ( MaPB, TenPB, DiaChi, SDT, MaTP )
+VALUES  ( 'PB01', -- MaPB - varchar(10)
+          N'Hành Chính', -- TenPB - nvarchar(50)
+          N'hà Nội', -- DiaChi - nvarchar(50)
+          '111111111111111', -- SDT - char(15)
+          'NV01'  -- MaTP - varchar(10)
+          )
 
 
 -- 2/4: Sửa CSDL bảng Nhân Viên: trường Giới Tính

@@ -28,44 +28,33 @@ namespace QuanLyNhanSu
             btnThem.Enabled = !e;
             btnXoa.Enabled = !e;
             btnSua.Enabled = !e;
-            btnLamMoi.Enabled = !e;
-            btnClear.Enabled = !e;
-            btnThoat.Enabled = !e;
             btnLuu.Enabled = e;
             btnHuy.Enabled = e;
-            dtNgaySinh.Enabled = e;
-            radNam.Enabled = e;
-            radNu.Enabled = e;
-            txtBacLuong.Enabled = e;
+            dtNgaySinh.Enabled = e;      
+            cmbBacLuong.Enabled = e;
             txtDanToc.Enabled = e;
             txtHoTen.Enabled = e;
-            cbMaPB.Enabled = e;
+            cmbMaPB.Enabled = e;
             txtMaNV.Enabled = e;
-            txtMaTDHV.Enabled = e;
+            cmbMaTDHV.Enabled = e;
             txtQueQuan.Enabled = e;
             txtSDT.Enabled = e;
-            txtTimKiem.Enabled = e;
-            cbTimKiem.Enabled = e;
         }
         private void clearData()
         {
             txtMaNV.Text = "";
-            txtBacLuong.Text = "";
+            cmbBacLuong.Text = "";
             txtDanToc.Text = "";
             txtHoTen.Text = "";
-            txtMaTDHV.Text = "";
+            cmbGioiTinh.Text = "";
             txtQueQuan.Text = "";
             txtSDT.Text = "";
-            cbMaPB.Text = "";
+            cmbMaPB.Text = "";
+            cmbMaTDHV.Text = "";
         }
-        //void FillcbMaPB()
-        //{
-        //    Bus.MaPB(cbMaPB.Text);
-        //}
         private void HienThi()
         {
             dgvNhanVien.DataSource = Bus.GetData();
-            //FillcbMaPB();
         }
         // xử lý cbMaPB
 
@@ -82,12 +71,6 @@ namespace QuanLyNhanSu
             else
                 HienThi();
         }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            clearData();
-        }
-
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             HienThi();
@@ -96,19 +79,31 @@ namespace QuanLyNhanSu
 
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtMaNV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaNV"].Value);
-            txtHoTen.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["HoTen"].Value);
-            txtDanToc.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["DanToc"].Value);
-            txtSDT.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["SDT"].Value);
-            txtQueQuan.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["QueQuan"].Value);
-            dtNgaySinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["NgaySinh"].Value);
-            txtMaTDHV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaTDHV"].Value);
-            cbMaPB.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaPB"].Value);
-            txtBacLuong.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["BacLuong"].Value);
-            if (dgvNhanVien.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString() == "Nam") radNam.Checked = true;
-            else radNu.Checked = true;
-
-
+            if (fluu == 0)
+            {               
+                txtHoTen.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["HoTen"].Value);
+                txtDanToc.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["DanToc"].Value);
+                txtSDT.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["SDT"].Value);
+                txtQueQuan.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["QueQuan"].Value);
+                dtNgaySinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["NgaySinh"].Value);
+                cmbMaTDHV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaTDHV"].Value);
+                cmbMaPB.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaPB"].Value);
+                cmbBacLuong.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["BacLuong"].Value);
+                cmbGioiTinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["GioiTinh"].Value);
+            }
+            else
+            {
+                txtMaNV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaNV"].Value);
+                txtHoTen.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["HoTen"].Value);
+                txtDanToc.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["DanToc"].Value);
+                txtSDT.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["SDT"].Value);
+                txtQueQuan.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["QueQuan"].Value);
+                dtNgaySinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["NgaySinh"].Value);
+                cmbMaTDHV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaTDHV"].Value);
+                cmbMaPB.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaPB"].Value);
+                cmbBacLuong.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["BacLuong"].Value);
+                cmbGioiTinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["GioiTinh"].Value);
+            }
         }
 
         private void dgvNhanVien_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
@@ -139,13 +134,15 @@ namespace QuanLyNhanSu
         {
             fluu = 0;
             txtMaNV.Text = Bus.TangMa();
-            DisEnl(true);          
+            DisEnl(true);
+            txtMaNV.Enabled = false;         
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             fluu = 1;
             DisEnl(true);
+            txtMaNV.Enabled = false;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -154,11 +151,6 @@ namespace QuanLyNhanSu
             cbTimKiem.Enabled = false;
             HienThi();
         }
-        private void show_cbMaPB()
-        {
-            Bus.show_MaPB(cbMaPB.Text);
-        }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             txtTimKiem.Enabled = true;
@@ -174,30 +166,17 @@ namespace QuanLyNhanSu
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            txtMaNV.Enabled = false;
             // xử lý
             obj.MaNV = txtMaNV.Text;
             obj.HoTen = txtHoTen.Text;
-            obj.MaPB = cbMaPB.Text;
+            obj.MaPB = cmbMaPB.Text;
             obj.QueQuan = txtQueQuan.Text;
             obj.DanToc = txtDanToc.Text;
-            obj.MaTDHV = txtMaTDHV.Text;
+            obj.MaTDHV = cmbMaTDHV.Text;
             obj.SDT = txtSDT.Text;
             obj.NgaySinh = dtNgaySinh.Value;
-
-            int _luong;
-            int.TryParse(txtBacLuong.Text, out _luong);
-
-            obj.BacLuong = _luong;
-
-            string gt;
-            if (radNam.Checked)
-            {
-                gt = "Nam";
-            }
-            else gt = "Nữ";
-
-            obj.GioiTinh = gt;
+            obj.BacLuong = cmbBacLuong.Text;
+            obj.GioiTinh = cmbGioiTinh.Text;
             if (fluu == 0)
             {
                 try
@@ -239,6 +218,7 @@ namespace QuanLyNhanSu
                 HienThi();
                 DisEnl(false);
                 fluu = 1;
+                
             }
             else
                 return;

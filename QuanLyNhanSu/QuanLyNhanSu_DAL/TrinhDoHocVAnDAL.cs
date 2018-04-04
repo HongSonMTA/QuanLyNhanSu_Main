@@ -47,5 +47,9 @@ namespace QuanLyNhanSu_DAL
             };
             return kn.ExcuteSQL("SP_Xoa_TDHV", para);
         }
+        public string TangMa()
+        {
+            return kn.TangMa("SELECT * FROM dbo.TrinhDoHocVan","TD");
+        }
     }
 }

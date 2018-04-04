@@ -97,6 +97,7 @@ namespace QuanLyNhanSu
         {
             fluu = 1;
             DisEnl(true);
+            txtMaPB.Enabled = false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -177,6 +178,17 @@ namespace QuanLyNhanSu
         {
             txtTimKiem.Text = "";
             cmbTimKiem.Text = "";
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (txtTimKiem.Text.Trim() == "" || txtTimKiem.Text.Trim().Length > 50)
+            {
+                MessageBox.Show("Lỗi Từ khóa", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            dgvPhongBan.Refresh();
+            dgvPhongBan.DataSource = QuanLyNhanSu_DAL.PhongbanDAL.TimKiem(cmbTimKiem.SelectedIndex, txtTimKiem.Text.Trim());
         }
     }
 }

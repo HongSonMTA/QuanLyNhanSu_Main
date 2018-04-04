@@ -28,6 +28,9 @@ namespace QuanLyNhanSu_BUS
         {
             return tdhvdal.XoaTDHV(id);
         }
-
+        public string TangMa()
+        {
+            return tdhvdal.TangMa();
+        }
     }
 }

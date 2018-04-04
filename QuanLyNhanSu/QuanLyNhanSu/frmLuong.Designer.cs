@@ -157,7 +157,7 @@
             this.dgvLuong.Size = new System.Drawing.Size(906, 422);
             this.dgvLuong.TabIndex = 0;
             this.dgvLuong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLuong_CellClick);
-            this.dgvLuong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLuong_CellContentClick);
+          
             this.dgvLuong.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvLuong_RowPrePaint);
             // 
             // STT

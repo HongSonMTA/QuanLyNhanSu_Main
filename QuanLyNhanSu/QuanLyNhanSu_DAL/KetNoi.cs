@@ -13,7 +13,7 @@ namespace QuanLyNhanSu_DAL
        private SqlConnection conn;
         public KetNoi()
         {
-            conn = new SqlConnection(@"Data Source=ADMIN-PC\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
+            conn = new SqlConnection(@"Data Source=DESKTOP-7SK7HI5\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
         }
         public DataTable GetData(string strSql)
         {
@@ -63,8 +63,8 @@ namespace QuanLyNhanSu_DAL
             //cmd.Connection = conn;
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = cmd;
-            conn.Open();
-            DataTable dt = new DataTable();                     
+            DataTable dt = new DataTable();  
+            conn.Open();                            
             da.Fill(dt);
             conn.Close();
             return dt;
