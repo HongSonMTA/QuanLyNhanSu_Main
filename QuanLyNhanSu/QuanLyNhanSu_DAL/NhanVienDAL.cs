@@ -76,13 +76,13 @@ namespace QuanLyNhanSu_DAL
                     query = string.Format("SELECT * FROM dbo.NhanVien WHERE HoTen LIKE N'%{0}%'", TuKhoa);
                     return Helper.ToListof<NhanVienEntity>(conn.GetData(query));
                 case 2:
-                    query = string.Format("SELECT * FROM dbo.NhanVien WHERE MaPB LIKE '%{0}%'", TuKhoa);
+                    query = string.Format(" SELECT * FROM dbo.NhanVien NV, dbo.PhongBan PB WHERE NV.MaPB=PB.MaPB AND PB.TenPB LIKE N'%{0}%'", TuKhoa);
                     return Helper.ToListof<NhanVienEntity>(conn.GetData(query));
                 case 3:
                     query = string.Format("SELECT * FROM dbo.NhanVien WHERE QueQuan LIKE N'%{0}%'", TuKhoa);
                     return Helper.ToListof<NhanVienEntity>(conn.GetData(query));
             }
-            return Helper.ToListof<NhanVienEntity>(conn.GetData("SELECT * FROM dbo.NhanVien"));
+            return Helper.ToListof<NhanVienEntity>(conn.GetData(" SELECT NV.MaNV,NV.HoTen,NV.DanToc,NV.GioiTinh,NV.SDT,NV.QueQuan,NV.NgaySinh,NV.MaTDHV,PB.TenPB,NV.BacLuong FROM dbo.NhanVien NV, dbo.PhongBan PB "));
         }
         public DataTable GetListBoPhan()
         {
