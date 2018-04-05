@@ -4,7 +4,7 @@ GO
 --Sơn--Phòng Ban
 
 --Thêm Phòng Ban
-CREATE PROC Them_PB (@MaPb varchar(10), @TenPB nvarchar(30), @MaTP varchar(10),@DiaChi Nvarchar(30), @Sdt Char(11))
+ALTER PROC Them_PB (@MaPb varchar(10), @TenPB nvarchar(30), @MaTP varchar(10),@DiaChi Nvarchar(30), @Sdt Char(11))
 AS
 BEGIN
 	INSERT INTO dbo.PhongBan( MaPB, TenPB,MaTP, DiaChi, SDT )
@@ -13,7 +13,7 @@ END
 
 GO
 --Sửa Phòng ban
-CREATE PROC Sua_PB (@MaPb varchar(10), @TenPB nvarchar(30), @MaTP varchar(10),@DiaChi Nvarchar(30), @Sdt Char(11))
+ALTER PROC Sua_PB (@MaPb varchar(10), @TenPB nvarchar(30), @MaTP varchar(10),@DiaChi Nvarchar(30), @Sdt Char(11))
 AS
 BEGIN
 	UPDATE dbo.PhongBan
@@ -23,7 +23,7 @@ END
 
 GO 
 --xóa Phòng Ban
-CREATE PROC Xoa_PB (@Ma varchar(10))
+ALTER PROC Xoa_PB (@Ma varchar(10))
 AS
 BEGIN
 		DELETE dbo.PhongBan WHERE MaPB = @Ma
@@ -31,7 +31,7 @@ END
 
 GO
 --Hiển Thị dữ liệu
-CREATE PROC PB_SelectAll 
+ALTER PROC PB_SelectAll 
 AS
 BEGIN
 		SELECT * FROM dbo.PhongBan
@@ -56,7 +56,7 @@ GO
 EXEC SP_ThemLuong '1','6000000','1','1'
 
 GO
-CREATE PROC SP_SuaLuong (@BacLuong VARCHAR(10), @LuongCoBan INT , @HeSoLuong INT , @HeSoPhuCap INT )
+ALTER PROC SP_SuaLuong (@BacLuong VARCHAR(10), @LuongCoBan INT , @HeSoLuong INT , @HeSoPhuCap INT )
 AS
 BEGIN
 	UPDATE dbo.Luong SET LuongCoBan = @LuongCoBan, HeSoLuong = @HeSoLuong, HeSoPhuCap = @HeSoPhuCap
@@ -66,28 +66,28 @@ GO
 EXEC SP_SuaLuong '1','6500000','1','1'
 
 GO
-CREATE PROC SP_XoaLuong(@BacLuong VARCHAR(10))
+ALTER PROC SP_XoaLuong(@BacLuong VARCHAR(10))
 AS
 BEGIN
 	DELETE dbo.Luong WHERE BacLuong = @BacLuong
 END 
 
 GO
-CREATE PROC SP_Luong_SelectAll 
+ALTER PROC SP_Luong_SelectAll 
 AS
 BEGIN
 		SELECT * FROM dbo.Luong
 END
 
 GO
-CREATE PROC SP_Luong_SelectByID (@BacLuong VARCHAR() )
+ALTER PROC SP_Luong_SelectByID (@BacLuong VARCHAR(10) )
 AS
 BEGIN
 		SELECT * FROM dbo.Luong WHERE BacLuong = @BacLuong
 END
 GO
 --Dương - thu tuc dang nhap
-CREATE PROC DangNhap(@TaiKhoan NCHAR(50),@MatKhau NCHAR(50))
+ALTER PROC DangNhap(@TaiKhoan NCHAR(50),@MatKhau NCHAR(50))
 AS
 BEGIN
 SELECT * FROM dbo.NguoiDung WHERE TaiKhoan=@TaiKhoan AND MatKhau=@MatKhau
@@ -134,10 +134,10 @@ GO
 -- Ánh- Thủ tục Nhân Viên
 -- Hiện ra danh sách Nhân Viên
 GO
-CREATE PROC NV_SelectAll 
+ALTER PROC NV_SelectAll 
 AS
 BEGIN
-	SELECT * FROM dbo.NhanVien
+	SELECT MaNV,HoTen,DanToc,GioiTinh,NhanVien.SDT,QueQuan,NgaySinh,MaTDHV,TenPB, TienLuong=(LuongCoBan + LuongCoBan*HeSoLuong +HeSoLuong*100000) FROM dbo.NhanVien INNER JOIN dbo.PhongBan ON PhongBan.MaPB = NhanVien.MaPB INNER JOIN dbo.Luong ON Luong.BacLuong = NhanVien.BacLuong
 END
 
 go
@@ -145,7 +145,7 @@ EXEC dbo.NV_SelectAll
 
 --
 GO
-CREATE PROC NV_SelectByID (@MaNV varchar(10))
+ALTER PROC NV_SelectByID (@MaNV varchar(10))
 AS
 BEGIN
 		SELECT * FROM dbo.NhanVien WHERE MaNV = @MaNV
@@ -175,12 +175,13 @@ END
 
 -- Xóa Nhân Viên
 GO
-CREATE PROC XoaNV(@MaNV VARCHAR(10))
+ALTER PROC XoaNV(@MaNV VARCHAR(10))
 AS
 BEGIN
 DELETE dbo.NhanVien
 WHERE MaNV=@MaNV
 END
+
 
 --Cường---
 --Thủ tục thời gian công tác--

@@ -84,5 +84,13 @@ namespace QuanLyNhanSu_DAL
             }
             return Helper.ToListof<NhanVienEntity>(conn.GetData("SELECT * FROM dbo.NhanVien"));
         }
+        public DataTable GetListBoPhan()
+        {
+            return conn.GetData("PB_SelectAll ", null);
+        }
+        public DataTable GetListLuong()
+        {
+            return conn.GetData("SP_Luong_SelectAll ", null);
+        }
     }
 }

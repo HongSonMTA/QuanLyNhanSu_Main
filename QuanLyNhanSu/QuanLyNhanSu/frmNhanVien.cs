@@ -23,6 +23,23 @@ namespace QuanLyNhanSu
         {
             InitializeComponent();
         }
+        public void Showdulieu()
+        {
+            DataTable dt = new DataTable();
+            dt = Bus.GetListBoPhan();
+            cmbMaPB.DataSource = dt;
+            cmbMaPB.DisplayMember = "TenPB";
+            cmbMaPB.ValueMember = "MaPB";
+         
+        }
+        public void ShowLuong()
+        {
+            DataTable dt = new DataTable();
+            dt = Bus.GetListLuong();
+            cmbBacLuong.DataSource = dt;
+            cmbBacLuong.DisplayMember = "BacLuong";
+            cmbBacLuong.ValueMember = "BacLuong";
+        }
         private void DisEnl(bool e)
         {
             btnThem.Enabled = !e;
@@ -39,6 +56,8 @@ namespace QuanLyNhanSu
             cmbMaTDHV.Enabled = e;
             txtQueQuan.Enabled = e;
             txtSDT.Enabled = e;
+            radNam.Enabled = e;
+            radNu.Enabled = e;
         }
         private void clearData()
         {
@@ -46,7 +65,8 @@ namespace QuanLyNhanSu
             cmbBacLuong.Text = "";
             txtDanToc.Text = "";
             txtHoTen.Text = "";
-            cmbGioiTinh.Text = "";
+            radNam.Checked=false;
+            radNu.Checked = false;
             txtQueQuan.Text = "";
             txtSDT.Text = "";
             cmbMaPB.Text = "";
@@ -75,6 +95,8 @@ namespace QuanLyNhanSu
         {
             HienThi();
             DisEnl(false);
+            Showdulieu();
+            ShowLuong();
         }
 
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -87,9 +109,10 @@ namespace QuanLyNhanSu
                 txtQueQuan.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["QueQuan"].Value);
                 dtNgaySinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["NgaySinh"].Value);
                 cmbMaTDHV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaTDHV"].Value);
-                cmbMaPB.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaPB"].Value);
-                cmbBacLuong.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["BacLuong"].Value);
-                cmbGioiTinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["GioiTinh"].Value);
+                cmbMaPB.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TenPB"].Value);
+                cmbBacLuong.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TienLuong"].Value);
+                if (dgvNhanVien.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString() == "Nam") radNam.Checked = true;
+                else radNu.Checked = true;
             }
             else
             {
@@ -100,9 +123,10 @@ namespace QuanLyNhanSu
                 txtQueQuan.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["QueQuan"].Value);
                 dtNgaySinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["NgaySinh"].Value);
                 cmbMaTDHV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaTDHV"].Value);
-                cmbMaPB.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaPB"].Value);
-                cmbBacLuong.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["BacLuong"].Value);
-                cmbGioiTinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["GioiTinh"].Value);
+                cmbMaPB.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TenPB"].Value);
+                cmbBacLuong.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TienLuong"].Value);
+                if (dgvNhanVien.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString() == "Nam") radNam.Checked = true;
+                else radNu.Checked = true;
             }
         }
 
@@ -167,23 +191,39 @@ namespace QuanLyNhanSu
         private void btnLuu_Click(object sender, EventArgs e)
         {
             // xử lý
+            if (txtMaNV.Text == "")
+            {
+                errorProvider1.SetError(txtMaNV, "Bạn chưa nhập mã nhân viên ");
+            }
+            if (txtHoTen.Text == "")
+            {
+                errorProvider1.SetError(txtHoTen, "Bạn chưa nhập tên nhân viên ");
+            }
             obj.MaNV = txtMaNV.Text;
             obj.HoTen = txtHoTen.Text;
-            obj.MaPB = cmbMaPB.Text;
+            obj.MaPB = cmbMaPB.SelectedValue.ToString();
             obj.QueQuan = txtQueQuan.Text;
             obj.DanToc = txtDanToc.Text;
             obj.MaTDHV = cmbMaTDHV.Text;
             obj.SDT = txtSDT.Text;
             obj.NgaySinh = dtNgaySinh.Value;
-            obj.BacLuong = cmbBacLuong.Text;
-            obj.GioiTinh = cmbGioiTinh.Text;
-            if (fluu == 0)
+            obj.BacLuong = cmbBacLuong.SelectedValue.ToString();
+            string gt;
+            if (radNam.Checked)
+            {
+                gt = "Nam";
+            }
+            else gt = "Nữ";
+
+            obj.GioiTinh = gt;
+            if (txtMaNV.Text != "" && txtHoTen.Text != "" && fluu == 0)
             {
                 try
                 {
                     Bus.InsertData(obj);
                     MessageBox.Show("Thêm thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     HienThi();
+                    frmNhanVien_Load(sender, e);
                     clearData();
                     DisEnl(false);
                     fluu = 1;
@@ -193,13 +233,14 @@ namespace QuanLyNhanSu
 
                 }
             }
-            else
+            else if (txtMaNV.Text != "" && txtHoTen.Text != "" && fluu != 0)
             {
                 try
                 {
                     Bus.UpdateData(obj);
                     MessageBox.Show("Sửa Thành Công ! ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     HienThi();
+                    frmNhanVien_Load(sender, e);
                     clearData();
                     DisEnl(false);
                 }
