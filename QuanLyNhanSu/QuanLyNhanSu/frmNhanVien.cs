@@ -45,7 +45,7 @@ namespace QuanLyNhanSu
             DataTable dt = new DataTable();
             dt = Bus.GetListTDHV();
             cmbMaTDHV.DataSource = dt;
-            cmbMaTDHV.DisplayMember = "TenTDHV";
+            cmbMaTDHV.DisplayMember = "TenTrinhDo";
             cmbMaTDHV.ValueMember = "MaTDHV";
         }
         private void DisEnl(bool e)
@@ -145,14 +145,10 @@ namespace QuanLyNhanSu
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            txtTimKiem.Enabled = false;
-            cbTimKiem.Enabled = false;
             HienThi();
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            txtTimKiem.Enabled = true;
-            cbTimKiem.Enabled = true;
             if (txtTimKiem.Text.Trim() == "" || txtTimKiem.Text.Trim().Length > 50)
             {
                 MessageBox.Show("Lỗi Từ khóa", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
