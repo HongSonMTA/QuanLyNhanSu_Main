@@ -349,13 +349,13 @@
   <metadata name="SDT.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="NgaySinh.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="QueQuan.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="MaTDHV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="NgaySinh.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="TenTrinhDo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="TenPB.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -364,4 +364,37 @@
   <metadata name="TienLuong.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
 </root>

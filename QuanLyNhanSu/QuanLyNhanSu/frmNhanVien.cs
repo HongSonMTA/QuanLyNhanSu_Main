@@ -40,6 +40,14 @@ namespace QuanLyNhanSu
             cmbBacLuong.DisplayMember = "BacLuong";
             cmbBacLuong.ValueMember = "BacLuong";
         }
+        public void ShowTDHV()
+        {
+            DataTable dt = new DataTable();
+            dt = Bus.GetListTDHV();
+            cmbMaTDHV.DataSource = dt;
+            cmbMaTDHV.DisplayMember = "TenTDHV";
+            cmbMaTDHV.ValueMember = "MaTDHV";
+        }
         private void DisEnl(bool e)
         {
             btnThem.Enabled = !e;
@@ -97,43 +105,9 @@ namespace QuanLyNhanSu
             DisEnl(false);
             Showdulieu();
             ShowLuong();
+            ShowTDHV();
         }
 
-        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (fluu == 0)
-            {               
-                txtHoTen.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["HoTen"].Value);
-                txtDanToc.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["DanToc"].Value);
-                txtSDT.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["SDT"].Value);
-                txtQueQuan.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["QueQuan"].Value);
-                dtNgaySinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["NgaySinh"].Value);
-                cmbMaTDHV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaTDHV"].Value);
-                cmbMaPB.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TenPB"].Value);
-                cmbBacLuong.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TienLuong"].Value);
-                if (dgvNhanVien.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString() == "Nam") radNam.Checked = true;
-                else radNu.Checked = true;
-            }
-            else
-            {
-                txtMaNV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaNV"].Value);
-                txtHoTen.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["HoTen"].Value);
-                txtDanToc.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["DanToc"].Value);
-                txtSDT.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["SDT"].Value);
-                txtQueQuan.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["QueQuan"].Value);
-                dtNgaySinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["NgaySinh"].Value);
-                cmbMaTDHV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaTDHV"].Value);
-                cmbMaPB.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TenPB"].Value);
-                cmbBacLuong.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TienLuong"].Value);
-                if (dgvNhanVien.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString() == "Nam") radNam.Checked = true;
-                else radNu.Checked = true;
-            }
-        }
-
-        private void dgvNhanVien_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-        {
-            dgvNhanVien.Rows[e.RowIndex].Cells["STT"].Value = e.RowIndex + 1;
-        }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -149,7 +123,7 @@ namespace QuanLyNhanSu
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi");
+                    MessageBox.Show("Lỗi" + ex.Message);
                 }
             }
         }
@@ -204,7 +178,7 @@ namespace QuanLyNhanSu
             obj.MaPB = cmbMaPB.SelectedValue.ToString();
             obj.QueQuan = txtQueQuan.Text;
             obj.DanToc = txtDanToc.Text;
-            obj.MaTDHV = cmbMaTDHV.Text;
+            obj.MaTDHV = cmbMaTDHV.SelectedValue.ToString();
             obj.SDT = txtSDT.Text;
             obj.NgaySinh = dtNgaySinh.Value;
             obj.BacLuong = cmbBacLuong.SelectedValue.ToString();
@@ -228,9 +202,9 @@ namespace QuanLyNhanSu
                     DisEnl(false);
                     fluu = 1;
                 }
-                catch
+                catch(Exception ex)
                 {
-
+                    MessageBox.Show("Lỗi"+ex.Message);
                 }
             }
             else if (txtMaNV.Text != "" && txtHoTen.Text != "" && fluu != 0)
@@ -244,9 +218,9 @@ namespace QuanLyNhanSu
                     clearData();
                     DisEnl(false);
                 }
-                catch (Exception )
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi");
+                    MessageBox.Show("Lỗi" + ex.Message);
                 }
             }
         }
@@ -263,6 +237,42 @@ namespace QuanLyNhanSu
             }
             else
                 return;
+        }
+
+        private void dgvNhanVien_RowPrePaint_1(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            dgvNhanVien.Rows[e.RowIndex].Cells["STT"].Value = e.RowIndex + 1;
+        }
+
+        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (fluu == 0)
+            {
+                txtHoTen.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["HoTen"].Value);
+                txtDanToc.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["DanToc"].Value);
+                txtSDT.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["SDT"].Value);
+                txtQueQuan.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["QueQuan"].Value);
+                dtNgaySinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["NgaySinh"].Value);
+                cmbMaTDHV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TenTrinhDo"].Value);
+                cmbMaPB.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TenPB"].Value);
+                cmbBacLuong.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TienLuong"].Value);
+                if (dgvNhanVien.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString() == "Nam") radNam.Checked = true;
+                else radNu.Checked = true;
+            }
+            else
+            {
+                txtMaNV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaNV"].Value);
+                txtHoTen.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["HoTen"].Value);
+                txtDanToc.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["DanToc"].Value);
+                txtSDT.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["SDT"].Value);
+                txtQueQuan.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["QueQuan"].Value);
+                dtNgaySinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["NgaySinh"].Value);
+                cmbMaTDHV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TenTrinhDo"].Value);
+                cmbMaPB.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TenPB"].Value);
+                cmbBacLuong.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TienLuong"].Value);
+                if (dgvNhanVien.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString() == "Nam") radNam.Checked = true;
+                else radNu.Checked = true;
+            }
         }
     }
 }

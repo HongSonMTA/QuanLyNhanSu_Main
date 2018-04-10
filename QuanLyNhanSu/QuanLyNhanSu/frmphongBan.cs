@@ -89,7 +89,7 @@ namespace QuanLyNhanSu
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Có Lỗi Không thể xóa !");
+                    MessageBox.Show("Có Lỗi Không thể xóa !" + ex.Message);
                 }
             }
         }

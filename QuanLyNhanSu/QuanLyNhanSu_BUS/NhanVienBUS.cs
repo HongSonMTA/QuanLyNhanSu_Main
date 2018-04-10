@@ -28,6 +28,10 @@ namespace QuanLyNhanSu_BUS
         {
             return da.GetListLuong();
         }
+        public DataTable GetListTDHV()
+        {
+            return da.GetListTDHV();
+        }
         public int InsertData(NhanVienEntity NV)
         {
             return da.InsertData(NV);

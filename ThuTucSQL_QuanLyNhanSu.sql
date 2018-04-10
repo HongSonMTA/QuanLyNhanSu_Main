@@ -156,12 +156,17 @@ EXEC dbo.NV_SelectByID @MaNV = 'nv01' -- varchar(10)
 
 -- Thêm Nhân Viên
 GO
-ALTER PROC ThemNV(@MaNV VARCHAR(10), @HoTen NVARCHAR(50), @DanToc NVARCHAR(50), @GioiTinh NVARCHAR(5), @SDT CHAR(15), @QueQuan NVARCHAR(50), @NgaySinh DATE, @MaTDHV VARCHAR(10), @MaPB VARCHAR(10), @BacLuong VARCHAR(10))
+ALTER PROC ThemNV(@MaNV VARCHAR(10), @HoTen NVARCHAR(50), @DanToc NVARCHAR(50), @GioiTinh NVARCHAR(5), @SDT CHAR(15), @QueQuan NVARCHAR(50), @NgaySinh DATE, @MaTDHV VARCHAR(10), @TenPB NVARCHAR(50), @BacLuong VARCHAR(10))
 AS
 BEGIN
+DECLARE @MaPB VARCHAR(10)
+SELECT @MaPB=MaPB
+FROM dbo.PhongBan
+WHERE TenPB=@TenPB
 INSERT INTO dbo.NhanVien( MaNV , HoTen ,DanToc ,GioiTinh ,SDT ,QueQuan ,NgaySinh ,MaTDHV ,MaPB ,BacLuong)
 VALUES  ( @MaNV,@HoTen,@DanToc,@GioiTinh,@SDT,@QueQuan,@NgaySinh,@MaTDHV,@MaPB,@BacLuong)
 END
+
 
 -- Sửa Nhân Viên
 GO

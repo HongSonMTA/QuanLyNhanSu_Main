@@ -20,7 +20,7 @@ namespace QuanLyNhanSu_DAL
         {
             SqlParameter[] para =
             {
-                new SqlParameter("MaNV",NV.MaNV),
+                 new SqlParameter("MaNV",NV.MaNV),
                 new SqlParameter("HoTen",NV.HoTen),
                 new SqlParameter("DanToc",NV.DanToc),
                 new SqlParameter("GioiTinh",NV.GioiTinh),
@@ -91,6 +91,10 @@ namespace QuanLyNhanSu_DAL
         public DataTable GetListLuong()
         {
             return conn.GetData("SP_Luong_SelectAll ", null);
+        }
+        public DataTable GetListTDHV()
+        {
+            return conn.GetData("SP_TDHV_SelectAll", null);
         }
     }
 }

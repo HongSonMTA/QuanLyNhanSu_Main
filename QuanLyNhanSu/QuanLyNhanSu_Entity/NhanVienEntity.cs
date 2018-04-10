@@ -19,6 +19,7 @@ namespace QuanLyNhanSu_Entity
         public string MaPB { get; set; }
         public string BacLuong { get; set; }
         public string TenPB { get; set; }
+        public string TenTDHV { get; set; }
         public NhanVienEntity()
         {
             MaNV = "";
@@ -32,9 +33,10 @@ namespace QuanLyNhanSu_Entity
             MaPB = "";
             BacLuong = "";
             TenPB = "";
+            TenTDHV = "";
 
         }
-        public NhanVienEntity(string _MaNV, string _HoTen, string _DanToc, string _GioiTinh, string _SDT, string _QueQuan, DateTime _NgaySinh, string _MaTDHV, string _MaPB, string _BacLuong, string _TenPB)
+        public NhanVienEntity(string _MaNV, string _HoTen, string _DanToc, string _GioiTinh, string _SDT, string _QueQuan, DateTime _NgaySinh, string _MaTDHV, string _MaPB, string _BacLuong, string _TenPB, string _TenTDHV)
         {
             MaNV = _MaNV;
             HoTen = _HoTen;
@@ -47,6 +49,7 @@ namespace QuanLyNhanSu_Entity
             MaPB = _MaPB;
             BacLuong = _BacLuong;
             TenPB = _TenPB;
+            TenTDHV = _TenTDHV;
         }
 
     }
