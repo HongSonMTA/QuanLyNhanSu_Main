@@ -511,10 +511,16 @@
             this.cbTimKiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTimKiem.FormattingEnabled = true;
             this.cbTimKiem.Items.AddRange(new object[] {
-            "Theo Mã Nhân Viên",
-            "Theo Tên Nhân Viên",
-            "Theo Tên PB",
-            "Theo Quê Quán"});
+            "Mã Nhân Viên",
+            "Tên Nhân Viên",
+            "Dân Tộc",
+            "Giới Tính",
+            "SĐT",
+            "Quê Quán",
+            "Ngày Sinh",
+            "TĐHV",
+            "Tên Phòng Ban",
+            "Lương"});
             this.cbTimKiem.Location = new System.Drawing.Point(148, 31);
             this.cbTimKiem.Name = "cbTimKiem";
             this.cbTimKiem.Size = new System.Drawing.Size(259, 27);
