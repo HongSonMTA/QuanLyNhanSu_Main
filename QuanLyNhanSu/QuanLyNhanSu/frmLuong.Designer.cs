@@ -157,7 +157,6 @@
             this.dgvLuong.Size = new System.Drawing.Size(906, 422);
             this.dgvLuong.TabIndex = 0;
             this.dgvLuong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLuong_CellClick);
-          
             this.dgvLuong.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvLuong_RowPrePaint);
             // 
             // STT
@@ -299,7 +298,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1283, 601);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnHuy);
@@ -310,6 +309,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnThem);
             this.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

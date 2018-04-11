@@ -286,7 +286,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(18, 358);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 17);
+            this.label11.Size = new System.Drawing.Size(75, 17);
             this.label11.TabIndex = 9;
             this.label11.Text = "Bậc Lương";
             // 
@@ -295,7 +295,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(16, 322);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(109, 17);
+            this.label10.Size = new System.Drawing.Size(100, 17);
             this.label10.TabIndex = 8;
             this.label10.Text = "Tên Phòng Ban";
             // 
@@ -304,7 +304,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(18, 247);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 17);
+            this.label8.Size = new System.Drawing.Size(69, 17);
             this.label8.TabIndex = 6;
             this.label8.Text = "Ngày Sinh";
             // 
@@ -321,7 +321,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(17, 284);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 17);
+            this.label9.Size = new System.Drawing.Size(50, 17);
             this.label9.TabIndex = 7;
             this.label9.Text = "TĐHV";
             // 
@@ -345,7 +345,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(18, 214);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 17);
+            this.label7.Size = new System.Drawing.Size(69, 17);
             this.label7.TabIndex = 5;
             this.label7.Text = "Quê Quán";
             // 
@@ -355,7 +355,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dgvNhanVien);
-            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 424);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(843, 305);
@@ -466,7 +466,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(18, 177);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 17);
+            this.label6.Size = new System.Drawing.Size(36, 17);
             this.label6.TabIndex = 4;
             this.label6.Text = "SĐT";
             // 
@@ -475,7 +475,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(17, 137);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 17);
+            this.label5.Size = new System.Drawing.Size(62, 17);
             this.label5.TabIndex = 3;
             this.label5.Text = "Giới Tính";
             // 
@@ -484,7 +484,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(16, 100);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 17);
+            this.label4.Size = new System.Drawing.Size(60, 17);
             this.label4.TabIndex = 2;
             this.label4.Text = "Dân Tộc";
             // 
@@ -493,7 +493,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(16, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 17);
+            this.label3.Size = new System.Drawing.Size(53, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Họ Tên";
             // 
@@ -502,7 +502,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(16, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 17);
+            this.label2.Size = new System.Drawing.Size(95, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã Nhân Viên";
             // 
@@ -549,7 +549,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(310, 396);
@@ -562,7 +562,7 @@
             this.radNam.AutoSize = true;
             this.radNam.Location = new System.Drawing.Point(228, 137);
             this.radNam.Name = "radNam";
-            this.radNam.Size = new System.Drawing.Size(56, 21);
+            this.radNam.Size = new System.Drawing.Size(55, 21);
             this.radNam.TabIndex = 29;
             this.radNam.TabStop = true;
             this.radNam.Text = "Nam";
@@ -573,7 +573,7 @@
             this.radNu.AutoSize = true;
             this.radNu.Location = new System.Drawing.Point(140, 137);
             this.radNu.Name = "radNu";
-            this.radNu.Size = new System.Drawing.Size(46, 21);
+            this.radNu.Size = new System.Drawing.Size(45, 21);
             this.radNu.TabIndex = 28;
             this.radNu.TabStop = true;
             this.radNu.Text = "Nữ";
@@ -605,7 +605,7 @@
             this.groupBox4.Controls.Add(this.btnTimKiem);
             this.groupBox4.Controls.Add(this.txtTimKiem);
             this.groupBox4.Controls.Add(this.cbTimKiem);
-            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(328, 78);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(527, 140);
@@ -618,7 +618,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(14, 69);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(109, 19);
+            this.label12.Size = new System.Drawing.Size(103, 19);
             this.label12.TabIndex = 22;
             this.label12.Text = "Nhập Từ Khóa";
             // 
@@ -627,7 +627,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(14, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 19);
+            this.label1.Size = new System.Drawing.Size(102, 19);
             this.label1.TabIndex = 21;
             this.label1.Text = "Kiểu Tìm Kiếm";
             // 
@@ -635,7 +635,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(877, 741);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
