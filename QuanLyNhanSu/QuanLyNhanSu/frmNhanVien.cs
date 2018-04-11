@@ -163,12 +163,44 @@ namespace QuanLyNhanSu
             // xử lý
             if (txtMaNV.Text == "")
             {
-                errorProvider1.SetError(txtMaNV, "Bạn chưa nhập mã nhân viên ");
+                MessageBox.Show("Bạn chưa nhập mã nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             if (txtHoTen.Text == "")
             {
-                errorProvider1.SetError(txtHoTen, "Bạn chưa nhập tên nhân viên ");
+                MessageBox.Show("Bạn chưa nhập tên nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            if (txtDanToc.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập dân tộc của nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (txtQueQuan.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập quê quán nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            if (txtSDT.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập SĐT nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            if (cmbBacLuong.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập bậc lương nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (cmbMaPB.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập phòng ban của nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (cmbMaTDHV.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập TĐHV nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (radNam.Checked==false && radNu.Checked==false)
+            {
+                MessageBox.Show("Bạn chưa chọn giới tính của nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
             obj.MaNV = txtMaNV.Text;
             obj.HoTen = txtHoTen.Text;
             obj.MaPB = cmbMaPB.SelectedValue.ToString();
@@ -186,7 +218,7 @@ namespace QuanLyNhanSu
             else gt = "Nữ";
 
             obj.GioiTinh = gt;
-            if (txtMaNV.Text != "" && txtHoTen.Text != "" && fluu == 0)
+            if (txtMaNV.Text != "" && txtHoTen.Text != "" && txtDanToc.Text !="" && txtQueQuan.Text !="" && txtSDT.Text !=""&& cmbBacLuong.Text !="" && cmbMaPB.Text !="" && cmbMaTDHV.Text !="" && radNam.Checked == false || radNu.Checked == false && fluu == 0)
             {
                 try
                 {
@@ -203,7 +235,7 @@ namespace QuanLyNhanSu
                     MessageBox.Show("Lỗi"+ex.Message);
                 }
             }
-            else if (txtMaNV.Text != "" && txtHoTen.Text != "" && fluu != 0)
+            else if (txtMaNV.Text != "" && txtHoTen.Text != "" && txtDanToc.Text != "" && txtQueQuan.Text != "" && txtSDT.Text != "" && cmbBacLuong.Text != "" && cmbMaPB.Text != "" && cmbMaTDHV.Text != "" && radNam.Checked == false || radNu.Checked == false && fluu != 0)
             {
                 try
                 {
