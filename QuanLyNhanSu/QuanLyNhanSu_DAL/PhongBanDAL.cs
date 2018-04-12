@@ -57,31 +57,10 @@ namespace QuanLyNhanSu_DAL
         {
             return conn.TangMa("Select * From PhongBan", "PB");
         }
-               public static List<PhongBanEntity> TimKiem(int type, string TuKhoa)
+        public DataTable TimKiemPB(string strTimKiem)
         {
-            string query = "";
-            KetNoi conn = new KetNoi();
-            switch (type)
-            {
-                case 0:
-                    query = string.Format("SELECT * FROM dbo.PhongBan WHERE MaPB LIKE '%{0}%'", TuKhoa);
-                    return Helper.ToListof<PhongBanEntity>(conn.GetData(query));
-                case 1:
-
-                    query = string.Format("SELECT * FROM dbo.PhongBan WHERE TenPB LIKE N'%{0}%'", TuKhoa);
-                    return Helper.ToListof<PhongBanEntity>(conn.GetData(query));
-                case 2:
-                    query = string.Format("SELECT * FROM dbo.PhongBan WHERE MaTP LIKE '%{0}%'", TuKhoa);
-                    return Helper.ToListof<PhongBanEntity>(conn.GetData(query));
-                case 3:
-                    query = string.Format("SELECT * FROM dbo.PhongBan WHERE DiaChi LIKE N'%{0}%'", TuKhoa);
-                    return Helper.ToListof<PhongBanEntity>(conn.GetData(query));
-                case 4:
-                    query = string.Format("SELECT * FROM dbo.PhongBan WHERE Sdt LIKE '%{0}%'", TuKhoa);
-                    return Helper.ToListof<PhongBanEntity>(conn.GetData(query));
-
-            }
-            return Helper.ToListof<PhongBanEntity>(conn.GetData("SELECT * FROM dbo.PhongBan"));
+            return conn.GetData(strTimKiem);
         }
+        
     }
 }

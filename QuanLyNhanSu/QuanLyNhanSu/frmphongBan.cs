@@ -182,13 +182,26 @@ namespace QuanLyNhanSu
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            if (txtTimKiem.Text.Trim() == "" || txtTimKiem.Text.Trim().Length > 50)
+            if (cmbTimKiem.Text == "Mã Phòng Ban")
             {
-                MessageBox.Show("Lỗi Từ khóa", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                dgvPhongBan.DataSource = Bus.TimKiemPB("SELECT * FROM dbo.PhongBan WHERE MaPB LIKE'%" + txtTimKiem.Text.Trim() + "%'");
             }
-            dgvPhongBan.Refresh();
-            dgvPhongBan.DataSource = QuanLyNhanSu_DAL.PhongbanDAL.TimKiem(cmbTimKiem.SelectedIndex, txtTimKiem.Text.Trim());
+            if (cmbTimKiem.Text == "Tên Phòng Ban")
+            {
+                dgvPhongBan.DataSource = Bus.TimKiemPB("SELECT * FROM dbo.PhongBan WHERE TenPB LIKE N'%" + txtTimKiem.Text.Trim() + "%'");
+            }
+            if (cmbTimKiem.Text == "Mã Trưởng Phòng")
+            {
+                dgvPhongBan.DataSource = Bus.TimKiemPB("SELECT * FROM dbo.PhongBan WHERE MaTP LIKE'%" + txtTimKiem.Text.Trim() + "%'");
+            }
+            if (cmbTimKiem.Text == "Địa Chỉ")
+            {
+                dgvPhongBan.DataSource = Bus.TimKiemPB("SELECT * FROM dbo.PhongBan WHERE DiaChi LIKE N'%" + txtTimKiem.Text.Trim() + "%'");
+            }
+            if (cmbTimKiem.Text == "Số Điện Thoại")
+            {
+                dgvPhongBan.DataSource = Bus.TimKiemPB("SELECT * FROM dbo.PhongBan WHERE Sdt LIKE'%" + txtTimKiem.Text.Trim() + "%'");
+            }
         }
     }
 }

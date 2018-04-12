@@ -36,5 +36,9 @@ namespace QuanLyNhanSu_BUS
         {
             return da.TangMa();
         }
+        public DataTable TimKiemPB(string strTimKiem)
+        {
+            return da.TimKiemPB(strTimKiem);
+        }
     }
 }

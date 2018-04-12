@@ -43,6 +43,10 @@ namespace QuanLyNhanSu_BUS
         public int DeleteData(String ID)
         {
             return da.DeleteData(ID);
-        }        
+        }
+        public DataTable TimKiemNV(string strTimKiem)
+        {
+            return da.TimKiemNV(strTimKiem);
+        }
     }
 }

@@ -517,7 +517,7 @@
             "Giới Tính",
             "SĐT",
             "Quê Quán",
-            "Ngày Sinh",
+            "Ngày Sinh(y1y2y3y4-m1m2-d1d2)",
             "TĐHV",
             "Tên Phòng Ban",
             "Lương"});
@@ -693,7 +693,6 @@
         private System.Windows.Forms.ComboBox cmbMaTDHV;
         private System.Windows.Forms.RadioButton radNam;
         private System.Windows.Forms.RadioButton radNu;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label12;
