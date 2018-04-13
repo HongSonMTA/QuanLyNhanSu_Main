@@ -517,7 +517,7 @@
             "Giới Tính",
             "SĐT",
             "Quê Quán",
-            "Ngày Sinh(y1y2y3y4-m1m2-d1d2)",
+            "Ngày Sinh",
             "TĐHV",
             "Tên Phòng Ban",
             "Lương"});
