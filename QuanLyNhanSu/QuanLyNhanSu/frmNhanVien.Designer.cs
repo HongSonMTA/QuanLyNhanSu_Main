@@ -517,7 +517,7 @@
             "Giới Tính",
             "SĐT",
             "Quê Quán",
-            "Ngày Sinh",
+            "Ngày Sinh(năm-tháng-ngày)",
             "TĐHV",
             "Tên Phòng Ban",
             "Lương"});

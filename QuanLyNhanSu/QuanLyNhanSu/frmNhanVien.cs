@@ -173,7 +173,7 @@ namespace QuanLyNhanSu
             {
                 dgvNhanVien.DataSource = Bus.TimKiemNV("SELECT MaNV,HoTen,DanToc,GioiTinh,NhanVien.SDT,QueQuan,NgaySinh,TenTrinhDo,TenPB,TienLuong = (LuongCoBan+LuongCoBan*HeSoLuong+HeSoPhuCap*100000) FROM dbo.NhanVien INNER JOIN dbo.PhongBan ON PhongBan.MaPB = NhanVien.MaPB INNER JOIN dbo.TrinhDoHocVan ON TrinhDoHocVan.MaTDHV = NhanVien.MaTDHV INNER JOIN dbo.Luong ON Luong.BacLuong = NhanVien.BacLuong and QueQuan LIKE N'%" + txtTimKiem.Text.Trim() + "%'");
             }
-            if (cbTimKiem.Text == "Ngày Sinh(y1y2y3y4-m1m2-d1d2)")
+            if (cbTimKiem.Text == "Ngày Sinh(năm-tháng-ngày)")
             {
                 dgvNhanVien.DataSource = Bus.TimKiemNV("SELECT MaNV,HoTen,DanToc,GioiTinh,NhanVien.SDT,QueQuan,NgaySinh,TenTrinhDo,TenPB,TienLuong = (LuongCoBan+LuongCoBan*HeSoLuong+HeSoPhuCap*100000) FROM dbo.NhanVien INNER JOIN dbo.PhongBan ON PhongBan.MaPB = NhanVien.MaPB INNER JOIN dbo.TrinhDoHocVan ON TrinhDoHocVan.MaTDHV = NhanVien.MaTDHV INNER JOIN dbo.Luong ON Luong.BacLuong = NhanVien.BacLuong and NgaySinh LIKE  '%" + txtTimKiem.Text.Trim() + "%'");
             }
