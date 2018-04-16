@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuanLyNhanSu_Entity;
+using QuanLyNhanSu_Entity;  
 using QuanLyNhanSu_BUS;
 namespace QuanLyNhanSu
 {
@@ -47,6 +47,11 @@ namespace QuanLyNhanSu
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

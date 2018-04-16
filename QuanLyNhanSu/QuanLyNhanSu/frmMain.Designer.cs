@@ -103,20 +103,20 @@
             // 
             this.ToolStripMenuItemDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemDangXuat.Image")));
             this.ToolStripMenuItemDangXuat.Name = "ToolStripMenuItemDangXuat";
-            this.ToolStripMenuItemDangXuat.Size = new System.Drawing.Size(127, 22);
+            this.ToolStripMenuItemDangXuat.Size = new System.Drawing.Size(180, 22);
             this.ToolStripMenuItemDangXuat.Text = "Đăng xuất";
             this.ToolStripMenuItemDangXuat.Click += new System.EventHandler(this.ToolStripMenuItemDangXuat_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // ToolStripMenuItemThoat
             // 
             this.ToolStripMenuItemThoat.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemThoat.Image")));
             this.ToolStripMenuItemThoat.Name = "ToolStripMenuItemThoat";
-            this.ToolStripMenuItemThoat.Size = new System.Drawing.Size(127, 22);
+            this.ToolStripMenuItemThoat.Size = new System.Drawing.Size(180, 22);
             this.ToolStripMenuItemThoat.Text = "Thoát";
             this.ToolStripMenuItemThoat.Click += new System.EventHandler(this.ToolStripMenuItemThoat_Click);
             // 
@@ -184,7 +184,7 @@
             this.hướngDãnSửDụngToolStripMenuItem,
             this.thôngTinLiênHệToolStripMenuItem});
             this.MenuTroGiup.Name = "MenuTroGiup";
-            this.MenuTroGiup.Size = new System.Drawing.Size(64, 31);
+            this.MenuTroGiup.Size = new System.Drawing.Size(65, 31);
             this.MenuTroGiup.Text = "Trợ Giúp";
             // 
             // hướngDãnSửDụngToolStripMenuItem
@@ -313,10 +313,11 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.lbchuchay);
-            this.panel1.Location = new System.Drawing.Point(0, 270);
+            this.panel1.Location = new System.Drawing.Point(0, 269);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(681, 41);
             this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // timer1
             // 
@@ -333,7 +334,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(13, 318);
+            this.panel2.Location = new System.Drawing.Point(13, 317);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(668, 129);
             this.panel2.TabIndex = 6;
@@ -440,7 +441,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLyNhanSu.Properties.Resources.LogoHV;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 109);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 108);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(681, 154);
             this.pictureBox1.TabIndex = 3;
