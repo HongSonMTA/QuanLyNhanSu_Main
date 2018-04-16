@@ -69,7 +69,7 @@ namespace QuanLyNhanSu_DAL
         
         public DataTable GetListBoPhan()
         {
-            return conn.GetData("PB_SelectAll ", null);
+            return conn.GetData("PB_Select ", null);
         }
         public DataTable GetListLuong()
         {
@@ -78,6 +78,10 @@ namespace QuanLyNhanSu_DAL
         public DataTable GetListTDHV()
         {
             return conn.GetData("SP_TDHV_SelectAll", null);
+        }
+        public DataTable GetListChucVu()
+        {
+            return conn.GetData("SPCVSELECTAll ", null);
         }
     }
 }

@@ -18,12 +18,14 @@ namespace QuanLyNhanSu
     {
         NhanVienEntity obj = new NhanVienEntity();
         NhanVienBUS Bus = new NhanVienBUS();
+        ThoiGianCongTacBUS TimeBus = new ThoiGianCongTacBUS();
+        ThoiGianCongTacEntity Time = new ThoiGianCongTacEntity();
         private int fluu = 1;
         public frmNhanVien()
         {
             InitializeComponent();
         }
-        public void Showdulieu()
+        public void ShowPhongBan()
         {
             DataTable dt = new DataTable();
             dt = Bus.GetListBoPhan();
@@ -31,6 +33,15 @@ namespace QuanLyNhanSu
             cmbMaPB.DisplayMember = "TenPB";
             cmbMaPB.ValueMember = "MaPB";
          
+        }
+        public void ShowChucVu()
+        {
+            DataTable dt = new DataTable();
+            dt = Bus.GetListChucVu();
+            cmbChucVu.DataSource = dt;
+            cmbChucVu.DisplayMember = "TenChucVu";
+            cmbChucVu.ValueMember = "MaChucVu";
+
         }
         public void ShowLuong()
         {
@@ -66,6 +77,8 @@ namespace QuanLyNhanSu
             txtSDT.Enabled = e;
             radNam.Enabled = e;
             radNu.Enabled = e;
+            cmbChucVu.Enabled = e;
+            dpNgayNhan.Enabled = e;
         }
         private void clearData()
         {
@@ -103,9 +116,10 @@ namespace QuanLyNhanSu
         {
             HienThi();
             DisEnl(false);
-            Showdulieu();
+            ShowPhongBan();
             ShowLuong();
             ShowTDHV();
+            ShowChucVu();
         }
 
 
@@ -232,7 +246,10 @@ namespace QuanLyNhanSu
             {
                 MessageBox.Show("Bạn chưa chọn giới tính của nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            if (cmbChucVu.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập Chức Vụ Của  nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             obj.MaNV = txtMaNV.Text;
             obj.HoTen = txtHoTen.Text;
@@ -243,6 +260,9 @@ namespace QuanLyNhanSu
             obj.SDT = txtSDT.Text;
             obj.NgaySinh = dtNgaySinh.Value;
             obj.BacLuong = cmbBacLuong.SelectedValue.ToString();
+            Time.MaNV = txtMaNV.Text;
+            Time.MaCV = cmbChucVu.SelectedValue.ToString();
+            Time.NgayNhanChuc = dpNgayNhan.Value;
             string gt;
             if (radNam.Checked)
             {
@@ -256,6 +276,7 @@ namespace QuanLyNhanSu
                 try
                 {
                     Bus.InsertData(obj);
+                    TimeBus.InserData(Time);
                     MessageBox.Show("Thêm thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     HienThi();
                     frmNhanVien_Load(sender, e);

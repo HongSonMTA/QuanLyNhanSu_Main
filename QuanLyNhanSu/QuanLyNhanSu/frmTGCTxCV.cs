@@ -35,16 +35,25 @@ namespace QuanLyNhanSu
             btnLuu.Enabled = e;
             btnHuy.Enabled = e;
             txtMaNV.Enabled = e;
-            txtMaCV.Enabled = e;
+            cmbChucVu.Enabled = e;
             txtMaChucVu.Enabled = e;
             txtTenChucVu.Enabled = e;
         }
         private void clearData()
         {
             txtMaNV.Text = "";
-            txtMaCV.Text = "";
+            cmbChucVu.Text = "";
             txtMaChucVu.Text = "";
             txtTenChucVu.Text = "";
+        }
+        public void ShowChucVu()
+        {
+            DataTable dt = new DataTable();
+            dt = bus.GetListChucVu();
+            cmbChucVu.DataSource = dt;
+            cmbChucVu.DisplayMember = "TenChucVu";
+            cmbChucVu.ValueMember = "MaChucVu";
+
         }
         private void HienThi()
         {
@@ -55,6 +64,8 @@ namespace QuanLyNhanSu
         {
             HienThi();
             DisEnl(false);
+            ShowChucVu();
+
         }
         private void btnThemTime_Click(object sender, EventArgs e)
         {
@@ -90,7 +101,7 @@ namespace QuanLyNhanSu
         private void btnLuuTime_Click(object sender, EventArgs e)
         {
             obj.MaNV = txtMaNV.Text;
-            obj.MaCV = txtMaCV.Text;
+            obj.MaCV = cmbChucVu.SelectedValue.ToString();
             obj.NgayNhanChuc = dpNgayNhanChuc.Value;
 
             if (fluu == 0)
@@ -148,7 +159,7 @@ namespace QuanLyNhanSu
         private void dgvTGCT_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             txtMaNV.Text = Convert.ToString(dgvTGCT.CurrentRow.Cells["MaNV"].Value);
-            txtMaCV.Text = Convert.ToString(dgvTGCT.CurrentRow.Cells["MaCV"].Value);
+            cmbChucVu.Text = Convert.ToString(dgvTGCT.CurrentRow.Cells["TenChucVu"].Value);
             dpNgayNhanChuc.Text = Convert.ToString(dgvTGCT.CurrentRow.Cells["NgayNhanChuc"].Value);
         }
 
@@ -260,6 +271,32 @@ namespace QuanLyNhanSu
         private void dgvChucVu_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             dgvChucVu.Rows[e.RowIndex].Cells["STT1"].Value = e.RowIndex + 1;
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (cmbTimKiem.Text == "Theo Mã NV")
+            {
+                dgvTGCT.DataSource = bus.TimKiemTGCT("SELECT dbo.ThoiGianCongTac.MaNV,HoTen,TenChucVu,NgayNhanChuc FROM dbo.ThoiGianCongTac,dbo.ChucVu,dbo.NhanVien WHERE MaChucVu = MaCV AND NhanVien.MaNV = ThoiGianCongTac.MaNV and ThoiGianCongTac.MaNV LIKE '%" + txtTimKiem.Text.Trim() + "%'");
+            }
+            if (cmbTimKiem.Text == "Theo Tên NV")
+            {
+                dgvTGCT.DataSource = bus.TimKiemTGCT(" SELECT dbo.ThoiGianCongTac.MaNV,HoTen,TenChucVu,NgayNhanChuc FROM dbo.ThoiGianCongTac,dbo.ChucVu,dbo.NhanVien WHERE MaChucVu = MaCV AND NhanVien.MaNV = ThoiGianCongTac.MaNV and HoTen LIKE N'%" + txtTimKiem.Text.Trim() + "%'");
+            }
+            if (cmbTimKiem.Text == "Theo Chức Vụ ")
+            {
+                dgvTGCT.DataSource = bus.TimKiemTGCT("SELECT dbo.ThoiGianCongTac.MaNV,HoTen,TenChucVu,NgayNhanChuc FROM dbo.ThoiGianCongTac,dbo.ChucVu,dbo.NhanVien WHERE MaChucVu = MaCV AND NhanVien.MaNV = ThoiGianCongTac.MaNV and TenChucVu LIKE N'%" + txtTimKiem.Text.Trim() + "%'");
+            }
+            if (cmbTimKiem.Text == "Theo Ngày Nhận Chức")
+            {
+                dgvTGCT.DataSource = bus.TimKiemTGCT("SELECT dbo.ThoiGianCongTac.MaNV,HoTen,TenChucVu,NgayNhanChuc FROM dbo.ThoiGianCongTac,dbo.ChucVu,dbo.NhanVien WHERE MaChucVu = MaCV AND NhanVien.MaNV = ThoiGianCongTac.MaNV and NgayNhanChuc LIKE '%" + txtTimKiem.Text.Trim() + "%'");
+            }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            HienThi();
+            DisEnl(false);
         }
         //Chức Vụ/////////
 

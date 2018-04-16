@@ -33,5 +33,13 @@ namespace QuanLyNhanSu_BUS
         {
             return TGCTDAL.DeleteData(ID);
         }
+        public DataTable GetListChucVu()
+        {
+            return TGCTDAL.GetListChucVu();
+        }
+        public DataTable TimKiemTGCT(string strTimKiem)
+        {
+            return TGCTDAL.TimKiemTGCT(strTimKiem);
+        }
     }
 }

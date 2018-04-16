@@ -34,16 +34,12 @@
             this.btnThoatTime = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvTGCT = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaCV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayNhanChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbChucVu = new System.Windows.Forms.ComboBox();
             this.dpNgayNhanChuc = new System.Windows.Forms.DateTimePicker();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.lbNgayNhanChuc = new System.Windows.Forms.Label();
             this.lbMaNV = new System.Windows.Forms.Label();
-            this.txtMaCV = new System.Windows.Forms.TextBox();
             this.lbMaCV = new System.Windows.Forms.Label();
             this.btnHuyTime = new System.Windows.Forms.Button();
             this.btnLuuTime = new System.Windows.Forms.Button();
@@ -67,6 +63,15 @@
             this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaCV1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenCV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayNhanChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbTimKiem = new System.Windows.Forms.ComboBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnLamMoi = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.ThoiGianCongTac.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -86,11 +91,15 @@
             this.ThoiGianCongTac.Margin = new System.Windows.Forms.Padding(4);
             this.ThoiGianCongTac.Name = "ThoiGianCongTac";
             this.ThoiGianCongTac.SelectedIndex = 0;
-            this.ThoiGianCongTac.Size = new System.Drawing.Size(1056, 435);
+            this.ThoiGianCongTac.Size = new System.Drawing.Size(1056, 520);
             this.ThoiGianCongTac.TabIndex = 10;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cmbTimKiem);
+            this.tabPage1.Controls.Add(this.txtTimKiem);
+            this.tabPage1.Controls.Add(this.btnLamMoi);
+            this.tabPage1.Controls.Add(this.btnTimKiem);
             this.tabPage1.Controls.Add(this.btnThoatTime);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
@@ -103,7 +112,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1048, 405);
+            this.tabPage1.Size = new System.Drawing.Size(1048, 490);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Quản Lý Thời Gian Công Tác";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -113,10 +122,10 @@
             this.btnThoatTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThoatTime.Image = ((System.Drawing.Image)(resources.GetObject("btnThoatTime.Image")));
             this.btnThoatTime.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThoatTime.Location = new System.Drawing.Point(673, 120);
+            this.btnThoatTime.Location = new System.Drawing.Point(651, 203);
             this.btnThoatTime.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoatTime.Name = "btnThoatTime";
-            this.btnThoatTime.Size = new System.Drawing.Size(75, 62);
+            this.btnThoatTime.Size = new System.Drawing.Size(66, 54);
             this.btnThoatTime.TabIndex = 11;
             this.btnThoatTime.Text = "Thoát";
             this.btnThoatTime.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -129,11 +138,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dgvTGCT);
-            this.groupBox2.Location = new System.Drawing.Point(0, 190);
+            this.groupBox2.Location = new System.Drawing.Point(4, 264);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1040, 207);
+            this.groupBox2.Size = new System.Drawing.Size(1011, 222);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách thời gian công tác";
@@ -144,62 +153,44 @@
             this.dgvTGCT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
             this.MaNV,
-            this.MaCV,
+            this.HoTen,
+            this.TenChucVu,
             this.NgayNhanChuc});
             this.dgvTGCT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTGCT.Location = new System.Drawing.Point(4, 22);
             this.dgvTGCT.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTGCT.Name = "dgvTGCT";
-            this.dgvTGCT.Size = new System.Drawing.Size(1032, 181);
+            this.dgvTGCT.Size = new System.Drawing.Size(1003, 196);
             this.dgvTGCT.TabIndex = 0;
             this.dgvTGCT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTGCT_CellClick_1);
             this.dgvTGCT.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvTGCT_RowPrePaint_1);
-            // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // MaNV
-            // 
-            this.MaNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Mã Nhân Viên";
-            this.MaNV.Name = "MaNV";
-            // 
-            // MaCV
-            // 
-            this.MaCV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaCV.DataPropertyName = "MaCV";
-            this.MaCV.HeaderText = "Mã Chức Vụ";
-            this.MaCV.Name = "MaCV";
-            // 
-            // NgayNhanChuc
-            // 
-            this.NgayNhanChuc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NgayNhanChuc.DataPropertyName = "NgayNhanChuc";
-            this.NgayNhanChuc.HeaderText = "Ngày Nhận Chức";
-            this.NgayNhanChuc.Name = "NgayNhanChuc";
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.cmbChucVu);
             this.groupBox1.Controls.Add(this.dpNgayNhanChuc);
             this.groupBox1.Controls.Add(this.txtMaNV);
             this.groupBox1.Controls.Add(this.lbNgayNhanChuc);
             this.groupBox1.Controls.Add(this.lbMaNV);
-            this.groupBox1.Controls.Add(this.txtMaCV);
             this.groupBox1.Controls.Add(this.lbMaCV);
             this.groupBox1.Location = new System.Drawing.Point(0, 4);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1036, 107);
+            this.groupBox1.Size = new System.Drawing.Size(1015, 114);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin thời gian công tác";
+            // 
+            // cmbChucVu
+            // 
+            this.cmbChucVu.FormattingEnabled = true;
+            this.cmbChucVu.Location = new System.Drawing.Point(481, 31);
+            this.cmbChucVu.Name = "cmbChucVu";
+            this.cmbChucVu.Size = new System.Drawing.Size(186, 25);
+            this.cmbChucVu.TabIndex = 21;
             // 
             // dpNgayNhanChuc
             // 
@@ -238,23 +229,15 @@
             this.lbMaNV.TabIndex = 18;
             this.lbMaNV.Text = "Mã Nhân Viên";
             // 
-            // txtMaCV
-            // 
-            this.txtMaCV.Location = new System.Drawing.Point(504, 34);
-            this.txtMaCV.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaCV.Name = "txtMaCV";
-            this.txtMaCV.Size = new System.Drawing.Size(204, 25);
-            this.txtMaCV.TabIndex = 19;
-            // 
             // lbMaCV
             // 
             this.lbMaCV.AutoSize = true;
             this.lbMaCV.Location = new System.Drawing.Point(388, 39);
             this.lbMaCV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMaCV.Name = "lbMaCV";
-            this.lbMaCV.Size = new System.Drawing.Size(86, 17);
+            this.lbMaCV.Size = new System.Drawing.Size(66, 17);
             this.lbMaCV.TabIndex = 18;
-            this.lbMaCV.Text = "Mã Chức Vụ";
+            this.lbMaCV.Text = " Chức Vụ";
             // 
             // btnHuyTime
             // 
@@ -262,10 +245,10 @@
             this.btnHuyTime.Enabled = false;
             this.btnHuyTime.Image = ((System.Drawing.Image)(resources.GetObject("btnHuyTime.Image")));
             this.btnHuyTime.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHuyTime.Location = new System.Drawing.Point(540, 119);
+            this.btnHuyTime.Location = new System.Drawing.Point(558, 202);
             this.btnHuyTime.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuyTime.Name = "btnHuyTime";
-            this.btnHuyTime.Size = new System.Drawing.Size(78, 63);
+            this.btnHuyTime.Size = new System.Drawing.Size(69, 55);
             this.btnHuyTime.TabIndex = 17;
             this.btnHuyTime.Text = "Hủy";
             this.btnHuyTime.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -278,10 +261,10 @@
             this.btnLuuTime.Enabled = false;
             this.btnLuuTime.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuTime.Image")));
             this.btnLuuTime.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLuuTime.Location = new System.Drawing.Point(411, 119);
+            this.btnLuuTime.Location = new System.Drawing.Point(457, 201);
             this.btnLuuTime.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuuTime.Name = "btnLuuTime";
-            this.btnLuuTime.Size = new System.Drawing.Size(76, 63);
+            this.btnLuuTime.Size = new System.Drawing.Size(67, 55);
             this.btnLuuTime.TabIndex = 16;
             this.btnLuuTime.Text = "Lưu";
             this.btnLuuTime.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -293,10 +276,10 @@
             this.btnXoaTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoaTime.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaTime.Image")));
             this.btnXoaTime.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnXoaTime.Location = new System.Drawing.Point(298, 119);
+            this.btnXoaTime.Location = new System.Drawing.Point(357, 202);
             this.btnXoaTime.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaTime.Name = "btnXoaTime";
-            this.btnXoaTime.Size = new System.Drawing.Size(78, 63);
+            this.btnXoaTime.Size = new System.Drawing.Size(69, 55);
             this.btnXoaTime.TabIndex = 15;
             this.btnXoaTime.Text = "Xóa";
             this.btnXoaTime.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -308,10 +291,10 @@
             this.btnThemTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThemTime.Image = ((System.Drawing.Image)(resources.GetObject("btnThemTime.Image")));
             this.btnThemTime.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThemTime.Location = new System.Drawing.Point(78, 119);
+            this.btnThemTime.Location = new System.Drawing.Point(171, 201);
             this.btnThemTime.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemTime.Name = "btnThemTime";
-            this.btnThemTime.Size = new System.Drawing.Size(78, 63);
+            this.btnThemTime.Size = new System.Drawing.Size(69, 55);
             this.btnThemTime.TabIndex = 13;
             this.btnThemTime.Text = "Thêm";
             this.btnThemTime.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -323,10 +306,10 @@
             this.btnSuaTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSuaTime.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaTime.Image")));
             this.btnSuaTime.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSuaTime.Location = new System.Drawing.Point(193, 119);
+            this.btnSuaTime.Location = new System.Drawing.Point(267, 202);
             this.btnSuaTime.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuaTime.Name = "btnSuaTime";
-            this.btnSuaTime.Size = new System.Drawing.Size(72, 63);
+            this.btnSuaTime.Size = new System.Drawing.Size(63, 55);
             this.btnSuaTime.TabIndex = 14;
             this.btnSuaTime.Text = "Sửa";
             this.btnSuaTime.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -340,7 +323,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1048, 405);
+            this.tabPage2.Size = new System.Drawing.Size(1048, 490);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Quản Lý Chức Vụ";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -359,11 +342,11 @@
             this.groupBox3.Controls.Add(this.btnSua);
             this.groupBox3.Controls.Add(this.btnThem);
             this.groupBox3.Controls.Add(this.groupBox4);
-            this.groupBox3.Location = new System.Drawing.Point(4, 4);
+            this.groupBox3.Location = new System.Drawing.Point(4, 18);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(1036, 404);
+            this.groupBox3.Size = new System.Drawing.Size(1011, 455);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin chức vụ";
@@ -373,10 +356,10 @@
             this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThoat.Location = new System.Drawing.Point(702, 131);
+            this.btnThoat.Location = new System.Drawing.Point(665, 124);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 62);
+            this.btnThoat.Size = new System.Drawing.Size(50, 49);
             this.btnThoat.TabIndex = 25;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -425,10 +408,10 @@
             this.btnHuy.Enabled = false;
             this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHuy.Location = new System.Drawing.Point(583, 131);
+            this.btnHuy.Location = new System.Drawing.Point(572, 123);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(77, 63);
+            this.btnHuy.Size = new System.Drawing.Size(52, 50);
             this.btnHuy.TabIndex = 22;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -441,10 +424,10 @@
             this.btnLuu.Enabled = false;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLuu.Location = new System.Drawing.Point(457, 131);
+            this.btnLuu.Location = new System.Drawing.Point(478, 124);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(83, 63);
+            this.btnLuu.Size = new System.Drawing.Size(58, 50);
             this.btnLuu.TabIndex = 21;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -456,10 +439,10 @@
             this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnXoa.Location = new System.Drawing.Point(344, 131);
+            this.btnXoa.Location = new System.Drawing.Point(383, 124);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(79, 63);
+            this.btnXoa.Size = new System.Drawing.Size(54, 50);
             this.btnXoa.TabIndex = 20;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -471,10 +454,10 @@
             this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSua.Location = new System.Drawing.Point(234, 131);
+            this.btnSua.Location = new System.Drawing.Point(288, 124);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(77, 63);
+            this.btnSua.Size = new System.Drawing.Size(52, 50);
             this.btnSua.TabIndex = 19;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -486,10 +469,10 @@
             this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThem.Location = new System.Drawing.Point(116, 131);
+            this.btnThem.Location = new System.Drawing.Point(196, 124);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(73, 63);
+            this.btnThem.Size = new System.Drawing.Size(48, 50);
             this.btnThem.TabIndex = 18;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -506,7 +489,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(1028, 194);
+            this.groupBox4.Size = new System.Drawing.Size(1003, 262);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh sách chức vụ";
@@ -522,7 +505,7 @@
             this.dgvChucVu.Location = new System.Drawing.Point(4, 22);
             this.dgvChucVu.Margin = new System.Windows.Forms.Padding(4);
             this.dgvChucVu.Name = "dgvChucVu";
-            this.dgvChucVu.Size = new System.Drawing.Size(1020, 168);
+            this.dgvChucVu.Size = new System.Drawing.Size(995, 236);
             this.dgvChucVu.TabIndex = 0;
             this.dgvChucVu.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvChucVu_RowPrePaint);
             this.dgvChucVu.Click += new System.EventHandler(this.dgvChucVu_Click);
@@ -547,12 +530,100 @@
             this.TenCV.HeaderText = "Tên Chức Vụ";
             this.TenCV.Name = "TenCV";
             // 
+            // STT
+            // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // MaNV
+            // 
+            this.MaNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã Nhân Viên";
+            this.MaNV.Name = "MaNV";
+            // 
+            // HoTen
+            // 
+            this.HoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Tên Nhân Viên";
+            this.HoTen.Name = "HoTen";
+            // 
+            // TenChucVu
+            // 
+            this.TenChucVu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenChucVu.DataPropertyName = "TenChucVu";
+            this.TenChucVu.HeaderText = "Tên Chức Vụ";
+            this.TenChucVu.Name = "TenChucVu";
+            // 
+            // NgayNhanChuc
+            // 
+            this.NgayNhanChuc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NgayNhanChuc.DataPropertyName = "NgayNhanChuc";
+            this.NgayNhanChuc.HeaderText = "Ngày Nhận Chức";
+            this.NgayNhanChuc.Name = "NgayNhanChuc";
+            // 
+            // cmbTimKiem
+            // 
+            this.cmbTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbTimKiem.FormattingEnabled = true;
+            this.cmbTimKiem.Items.AddRange(new object[] {
+            "Theo Mã NV",
+            "Theo Tên NV",
+            "Theo Chức Vụ",
+            "Theo Ngày Nhận Chức"});
+            this.cmbTimKiem.Location = new System.Drawing.Point(527, 139);
+            this.cmbTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbTimKiem.Name = "cmbTimKiem";
+            this.cmbTimKiem.Size = new System.Drawing.Size(160, 25);
+            this.cmbTimKiem.TabIndex = 21;
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTimKiem.Location = new System.Drawing.Point(292, 139);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(218, 25);
+            this.txtTimKiem.TabIndex = 20;
+            // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
+            this.btnLamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLamMoi.Location = new System.Drawing.Point(717, 136);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(100, 32);
+            this.btnLamMoi.TabIndex = 18;
+            this.btnLamMoi.Text = "Làm Mới ";
+            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
+            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimKiem.Location = new System.Drawing.Point(171, 136);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(107, 32);
+            this.btnTimKiem.TabIndex = 19;
+            this.btnTimKiem.Text = "Tìm Kiếm: ";
+            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
             // frmTGCTxCV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1042, 436);
+            this.ClientSize = new System.Drawing.Size(1019, 525);
             this.Controls.Add(this.ThoiGianCongTac);
             this.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -562,6 +633,7 @@
             this.Load += new System.EventHandler(this.frmTGCTxCV_Load);
             this.ThoiGianCongTac.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTGCT)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -587,7 +659,6 @@
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.Label lbNgayNhanChuc;
         private System.Windows.Forms.Label lbMaNV;
-        private System.Windows.Forms.TextBox txtMaCV;
         private System.Windows.Forms.Label lbMaCV;
         private System.Windows.Forms.Button btnHuyTime;
         private System.Windows.Forms.Button btnLuuTime;
@@ -608,12 +679,18 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dgvChucVu;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaCV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayNhanChuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCV1;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenCV;
+        private System.Windows.Forms.ComboBox cmbChucVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenChucVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayNhanChuc;
+        private System.Windows.Forms.ComboBox cmbTimKiem;
+        private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.Button btnTimKiem;
     }
 }

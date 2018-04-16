@@ -22,7 +22,10 @@ namespace QuanLyNhanSu_DAL
             SqlParameter[] para = { new SqlParameter("MaNV", ID) };
             return conn.GetData("SPTGCTSELECTBYID", para);
         }
-
+        public DataTable TimKiemTGCT(string strTimKiem)
+        {
+            return conn.GetData(strTimKiem);
+        }
         public int InsertData(ThoiGianCongTacEntity TGCT)
         {
             SqlParameter[] para = {
@@ -50,6 +53,10 @@ namespace QuanLyNhanSu_DAL
                 new SqlParameter("MaNV",ID)
             };
             return conn.ExcuteSQL("SPXOATGCT", para);
+        }
+        public DataTable GetListChucVu()
+        {
+            return conn.GetData("SPCVSELECTAll", null);
         }
     }
 }

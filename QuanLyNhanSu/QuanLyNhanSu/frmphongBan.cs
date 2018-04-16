@@ -17,6 +17,7 @@ namespace QuanLyNhanSu
         PhongBanEntity obj = new PhongBanEntity();
         PhongbanBus Bus = new PhongbanBus();
         private int fluu = 1;
+        public static string Ma;
         public frmphongBan()
         {
             InitializeComponent();
@@ -201,6 +202,16 @@ namespace QuanLyNhanSu
             if (cmbTimKiem.Text == "Số Điện Thoại")
             {
                 dgvPhongBan.DataSource = Bus.TimKiemPB("SELECT * FROM dbo.PhongBan WHERE Sdt LIKE'%" + txtTimKiem.Text.Trim() + "%'");
+            }
+        }
+
+        private void btnTTPB_Click(object sender, EventArgs e)
+        {
+            if (txtMaPB.Text != null)
+            {
+                Ma = txtMaPB.Text;
+                frmTTPhongBan frmNV = new frmTTPhongBan();
+                frmNV.Show();
             }
         }
     }

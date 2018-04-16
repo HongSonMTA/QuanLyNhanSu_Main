@@ -34,14 +34,16 @@ GO
 ALTER PROC PB_SelectAll 
 AS
 BEGIN
-		SELECT * FROM dbo.PhongBan
+		SELECT dbo.PhongBan.MaPB,TenPB,MaTP,DiaChi,dbo.PhongBan.SDT,COUNT(MaNV) AS SoLuong FROM dbo.PhongBan, dbo.NhanVien
+		WHERE NhanVien.MaPB = PhongBan.MaPB
+		GROUP BY  dbo.PhongBan.MaPB,TenPB,MaTP,DiaChi,dbo.PhongBan.SDT
 END
 
 GO
-CREATE PROC PB_SelectByID (@Ma varchar(10))
+CREATE PROC PB_Select ()
 AS
 BEGIN
-		SELECT * FROM dbo.PhongBan WHERE MaPB = @Ma
+		SELECT * FROM dbo.PhongBan 
 END
 
 GO
@@ -137,12 +139,13 @@ GO
 ALTER PROC NV_SelectAll 
 AS
 BEGIN
-	SELECT MaNV,HoTen,DanToc,GioiTinh,NhanVien.SDT,QueQuan,NgaySinh,TenTrinhDo,TenPB, TienLuong=(LuongCoBan + LuongCoBan*HeSoLuong +HeSoLuong*100000) 
-	FROM dbo.NhanVien INNER JOIN dbo.PhongBan 
-	ON PhongBan.MaPB = NhanVien.MaPB INNER JOIN dbo.Luong
-	ON Luong.BacLuong = NhanVien.BacLuong INNER JOIN dbo.TrinhDoHocVan
-	ON TrinhDoHocVan.MaTDHV = NhanVien.MaTDHV
-END
+	SELECT dbo.NhanVien.MaNV,HoTen,DanToc,GioiTinh,NhanVien.SDT,QueQuan,NgaySinh,TenTrinhDo,TenPB,TienLuong=(LuongCoBan + LuongCoBan*HeSoLuong +HeSoLuong*100000),TenChucVu 
+	FROM dbo.NhanVien, dbo.PhongBan,dbo.TrinhDoHocVan,dbo.Luong,dbo.ChucVu,dbo.ThoiGianCongTac
+	WHERE  PhongBan.MaPB = NhanVien.MaPB   
+	AND  Luong.BacLuong = NhanVien.BacLuong  
+	AND  TrinhDoHocVan.MaTDHV = NhanVien.MaTDHV
+	AND MaChucVu = MaCV AND NhanVien.MaNV = ThoiGianCongTac.MaNV
+ END
 
 go
 EXEC dbo.NV_SelectAll
@@ -191,16 +194,18 @@ END
 
 --Cường---
 --Thủ tục thời gian công tác--
-CREATE PROC SPTGCTSELECTAll1
+GO
+
+ALTER PROC SPTGCTSELECTAll1
 AS
 BEGIN
-SELECT * FROM dbo.ThoiGianCongTac
+SELECT MaNV,TenChucVu,NgayNhanChuc FROM dbo.ThoiGianCongTac,dbo.ChucVu
 END
 GO
-CREATE PROC SPTGCTSELECTBYID (@manv VARCHAR(10) )
+CREATE PROC SPTGCTSELECT
 AS
 BEGIN
-		SELECT * FROM dbo.ThoiGianCongTac WHERE MaNV = @manv
+		SELECT * FROM dbo.ThoiGianCongTac 
 END
 GO
 
