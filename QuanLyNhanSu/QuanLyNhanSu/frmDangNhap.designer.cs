@@ -121,9 +121,11 @@
             // 
             // frmDangNhap
             // 
+            this.AcceptButton = this.btnDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.CancelButton = this.btnThoat;
             this.ClientSize = new System.Drawing.Size(657, 291);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnThoat);

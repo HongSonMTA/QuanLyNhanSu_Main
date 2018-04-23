@@ -163,6 +163,7 @@
             this.ClientSize = new System.Drawing.Size(1015, 334);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmTTPhongBan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmTTPhongBan";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();

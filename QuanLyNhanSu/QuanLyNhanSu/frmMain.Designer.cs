@@ -103,20 +103,20 @@
             // 
             this.ToolStripMenuItemDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemDangXuat.Image")));
             this.ToolStripMenuItemDangXuat.Name = "ToolStripMenuItemDangXuat";
-            this.ToolStripMenuItemDangXuat.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItemDangXuat.Size = new System.Drawing.Size(127, 22);
             this.ToolStripMenuItemDangXuat.Text = "Đăng xuất";
             this.ToolStripMenuItemDangXuat.Click += new System.EventHandler(this.ToolStripMenuItemDangXuat_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
             // 
             // ToolStripMenuItemThoat
             // 
             this.ToolStripMenuItemThoat.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemThoat.Image")));
             this.ToolStripMenuItemThoat.Name = "ToolStripMenuItemThoat";
-            this.ToolStripMenuItemThoat.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItemThoat.Size = new System.Drawing.Size(127, 22);
             this.ToolStripMenuItemThoat.Text = "Thoát";
             this.ToolStripMenuItemThoat.Click += new System.EventHandler(this.ToolStripMenuItemThoat_Click);
             // 
@@ -203,7 +203,6 @@
             // 
             // ThanhCongCu
             // 
-            this.ThanhCongCu.AutoSize = false;
             this.ThanhCongCu.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ThanhCongCu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ttNhanVientoolStripButton,
@@ -291,11 +290,11 @@
             // toolStripButton1
             // 
             this.toolStripButton1.Image = global::QuanLyNhanSu.Properties.Resources.exit;
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(42, 67);
+            this.toolStripButton1.Size = new System.Drawing.Size(52, 67);
             this.toolStripButton1.Text = "Thoát";
-            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -440,10 +439,11 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::QuanLyNhanSu.Properties.Resources.LogoHV;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 108);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 105);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(681, 154);
+            this.pictureBox1.Size = new System.Drawing.Size(684, 349);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -472,6 +472,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
