@@ -136,5 +136,11 @@ namespace QuanLyNhanSu
         {
 
         }
+
+        private void MenuTroGiup_Click(object sender, EventArgs e)
+        {
+            frmhuongdan hd = new frmhuongdan();
+            hd.Show();
+        }
     }
 }
