@@ -271,7 +271,7 @@ namespace QuanLyNhanSu
             else gt = "Nữ";
 
             obj.GioiTinh = gt;
-            if (txtMaNV.Text != "" && txtHoTen.Text != "" && txtDanToc.Text !="" && txtQueQuan.Text !="" && txtSDT.Text !=""&& cmbBacLuong.Text !="" && cmbMaPB.Text !="" && cmbMaTDHV.Text !="" && radNam.Checked == false || radNu.Checked == false && fluu == 0)
+            if (txtMaNV.Text != "" && txtHoTen.Text != "" && txtDanToc.Text !="" && txtQueQuan.Text !="" && txtSDT.Text !=""&& cmbBacLuong.Text !="" && cmbMaPB.Text !="" && cmbMaTDHV.Text !="" && (radNam.Checked == false || radNu.Checked == false )&& fluu == 0)
             {
                 try
                 {
@@ -289,7 +289,7 @@ namespace QuanLyNhanSu
                     MessageBox.Show("Lỗi"+ex.Message);
                 }
             }
-            else if (txtMaNV.Text != "" && txtHoTen.Text != "" && txtDanToc.Text != "" && txtQueQuan.Text != "" && txtSDT.Text != "" && cmbBacLuong.Text != "" && cmbMaPB.Text != "" && cmbMaTDHV.Text != "" && radNam.Checked == false || radNu.Checked == false && fluu != 0)
+            else if (txtMaNV.Text != "" && txtHoTen.Text != "" && txtDanToc.Text != "" && txtQueQuan.Text != "" && txtSDT.Text != "" && cmbBacLuong.Text != "" && cmbMaPB.Text != "" && cmbMaTDHV.Text != "" && (radNam.Checked == false || radNu.Checked == false )&& fluu != 0)
             {
                 try
                 {

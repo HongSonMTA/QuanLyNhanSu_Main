@@ -31,7 +31,7 @@ END
 
 GO
 --Hiển Thị dữ liệu
-create PROC PB_SelectAll 
+ALTER PROC PB_SelectAll 
 AS
 BEGIN
 		SELECT dbo.PhongBan.MaPB,TenPB,MaTP,DiaChi,dbo.PhongBan.SDT,COUNT(MaNV) AS SoLuong FROM dbo.PhongBan, dbo.NhanVien
@@ -40,7 +40,7 @@ BEGIN
 END
 
 GO
-create PROC PB_Select ()
+create PROC PB_Select 
 AS
 BEGIN
 		SELECT * FROM dbo.PhongBan 
@@ -136,7 +136,7 @@ GO
 -- Ánh- Thủ tục Nhân Viên
 -- Hiện ra danh sách Nhân Viên
 GO
-create PROC NV_SelectAll 
+ALTER PROC NV_SelectAll 
 AS
 BEGIN
 	SELECT dbo.NhanVien.MaNV,HoTen,DanToc,GioiTinh,NhanVien.SDT,QueQuan,NgaySinh,TenTrinhDo,TenPB,TienLuong=(LuongCoBan + LuongCoBan*HeSoLuong +HeSoLuong*100000),TenChucVu 
