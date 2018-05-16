@@ -300,7 +300,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTDHV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmTDHV";
+            this.Text = "Trình độ học vấn";
             this.Load += new System.EventHandler(this.frmTDHV_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -26,11 +26,6 @@ namespace QuanLyNhanSu
 
             if (dt.Rows.Count > 0)
             {
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    nd.TaiKhoan = dt.Rows[i].ToString();
-                    nd.MatKhau = dt.Rows[i].ToString();
-                }
                 this.Hide();
                 frmMain mainn = new frmMain();
                 mainn.Show();

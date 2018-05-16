@@ -46,6 +46,7 @@ namespace QuanLyNhanSu
             {
                 HienThi();
                 DisEnl(false);
+                fluu = 1;
             }
             else
                 return;
@@ -105,15 +106,20 @@ namespace QuanLyNhanSu
                     DisEnl(false);
                     HienThi();
                 }
-                catch
+                catch (Exception ex)
                 {
-
+                    MessageBox.Show("Lỗi" + ex.Message);
                 }
             }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (txtTenTDHV.Text=="" || txtCN.Text=="")
+            {
+                MessageBox.Show("Bạn chưa nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             obj.MaTDHV = txtMaTDHV.Text;
             obj.TenTrinhDo = txtTenTDHV.Text;
             obj.ChuyenNganh = txtCN.Text;
@@ -124,6 +130,7 @@ namespace QuanLyNhanSu
                 HienThi();
                 clearData();
                 DisEnl(false);
+                fluu = 1;
             }
             else
             {
@@ -139,7 +146,6 @@ namespace QuanLyNhanSu
         {
             if (fluu == 0)
             {
-                // txtMaTDHV.Text = Convert.ToString(dgvTrinhDoHocVan.CurrentRow.Cells["MaTDHV"].Value);
                 txtTenTDHV.Text = Convert.ToString(dgvTrinhDoHocVan.CurrentRow.Cells["TenTDHV"].Value);
                 txtCN.Text = Convert.ToString(dgvTrinhDoHocVan.CurrentRow.Cells["ChuyenNganh"].Value);
             }
