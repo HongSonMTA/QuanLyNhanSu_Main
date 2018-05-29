@@ -141,3 +141,123 @@ VALUES  ( 'NV05' , -- MaNV - varchar(10)
           'PB04' , -- MaPB - varchar(10)
           'BL01'  -- BacLuong - varchar(10)
         )
+GO
+INSERT INTO dbo.NhanVien
+        ( MaNV ,
+          HoTen ,
+          DanToc ,
+          GioiTinh ,
+          SDT ,
+          QueQuan ,
+          NgaySinh ,
+          MaTDHV ,
+          MaPB ,
+          BacLuong
+        )
+VALUES  ( 'NV06' , -- MaNV - varchar(10)
+          N'Phí Thị Khánh Văn' , -- HoTen - nvarchar(50)
+          N'Kinh' , -- DanToc - nvarchar(50)
+          N'Nữ' , -- GioiTinh - nvarchar(5)
+          '0987689347' , -- SDT - char(15)
+          N'Hà Nội' , -- QueQuan - nvarchar(50)
+          '1993-08-10' , -- NgaySinh - date
+          'TD01' , -- MaTDHV - varchar(10)
+          'PB03' , -- MaPB - varchar(10)
+          'BL04'  -- BacLuong - varchar(10)
+        )
+GO
+INSERT INTO dbo.NhanVien
+        ( MaNV ,
+          HoTen ,
+          DanToc ,
+          GioiTinh ,
+          SDT ,
+          QueQuan ,
+          NgaySinh ,
+          MaTDHV ,
+          MaPB ,
+          BacLuong
+        )
+VALUES  ( 'NV07' , -- MaNV - varchar(10)
+          N'Đào Bá Hùng' , -- HoTen - nvarchar(50)
+          N'Kinh' , -- DanToc - nvarchar(50)
+          N'Nam' , -- GioiTinh - nvarchar(5)
+          '0989023787' , -- SDT - char(15)
+          N'Hà Nội' , -- QueQuan - nvarchar(50)
+          '1992-06-20' , -- NgaySinh - date
+          'TD03' , -- MaTDHV - varchar(10)
+          'PB04' , -- MaPB - varchar(10)
+          'BL01'  -- BacLuong - varchar(10)
+        )
+GO
+INSERT INTO dbo.NhanVien
+        ( MaNV ,
+          HoTen ,
+          DanToc ,
+          GioiTinh ,
+          SDT ,
+          QueQuan ,
+          NgaySinh ,
+          MaTDHV ,
+          MaPB ,
+          BacLuong
+        )
+VALUES  ( 'NV08' , -- MaNV - varchar(10)
+          N'Trần Văn Quyết' , -- HoTen - nvarchar(50)
+          N'Kinh' , -- DanToc - nvarchar(50)
+          N'Nam' , -- GioiTinh - nvarchar(5)
+          '0980233787' , -- SDT - char(15)
+          N'Hà Nội' , -- QueQuan - nvarchar(50)
+          '1992-07-25' , -- NgaySinh - date
+          'TD03' , -- MaTDHV - varchar(10)
+          'PB01' , -- MaPB - varchar(10)
+          'BL01'  -- BacLuong - varchar(10)
+        )
+GO
+INSERT INTO dbo.NhanVien
+        ( MaNV ,
+          HoTen ,
+          DanToc ,
+          GioiTinh ,
+          SDT ,
+          QueQuan ,
+          NgaySinh ,
+          MaTDHV ,
+          MaPB ,
+          BacLuong
+        )
+VALUES  ( 'NV09' , -- MaNV - varchar(10)
+          N'Nguyễn Hải Nam' , -- HoTen - nvarchar(50)
+          N'Kinh' , -- DanToc - nvarchar(50)
+          N'Nam' , -- GioiTinh - nvarchar(5)
+          '0989920387' , -- SDT - char(15)
+          N'Hà Nội' , -- QueQuan - nvarchar(50)
+          '1993-02-29' , -- NgaySinh - date
+          'TD02' , -- MaTDHV - varchar(10)
+          'PB04' , -- MaPB - varchar(10)
+          'BL04'  -- BacLuong - varchar(10)
+        )
+GO
+INSERT INTO dbo.NhanVien
+        ( MaNV ,
+          HoTen ,
+          DanToc ,
+          GioiTinh ,
+          SDT ,
+          QueQuan ,
+          NgaySinh ,
+          MaTDHV ,
+          MaPB ,
+          BacLuong
+        )
+VALUES  ( 'NV10' , -- MaNV - varchar(10)
+          N'Nguyễn Khắc Huy' , -- HoTen - nvarchar(50)
+          N'Kinh' , -- DanToc - nvarchar(50)
+          N'Nam' , -- GioiTinh - nvarchar(5)
+          '0990383787' , -- SDT - char(15)
+          N'Hà Nội' , -- QueQuan - nvarchar(50)
+          '1994-05-19' , -- NgaySinh - date
+          'TD02' , -- MaTDHV - varchar(10)
+          'PB01' , -- MaPB - varchar(10)
+          'BL05'  -- BacLuong - varchar(10)
+        )
