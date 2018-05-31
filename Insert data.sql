@@ -1,4 +1,23 @@
 ﻿USE QuanLyNhanSu
+GO 
+INSERT dbo.Luong ( BacLuong , LuongCoBan ,HeSoLuong , HeSoPhuCap )
+VALUES  ('BL02',3800000,1,1)
+INSERT dbo.Luong ( BacLuong , LuongCoBan ,HeSoLuong , HeSoPhuCap )
+VALUES  ('BL03',3900000,1,1)
+INSERT dbo.Luong ( BacLuong , LuongCoBan ,HeSoLuong , HeSoPhuCap )
+VALUES  ('BL04',3850000,1,1)
+INSERT dbo.Luong ( BacLuong , LuongCoBan ,HeSoLuong , HeSoPhuCap )
+VALUES  ('BL05',3950000,1,1)
+INSERT dbo.Luong ( BacLuong , LuongCoBan ,HeSoLuong , HeSoPhuCap )
+VALUES  ('BL06',4000000,1,1)
+INSERT dbo.Luong ( BacLuong , LuongCoBan ,HeSoLuong , HeSoPhuCap )
+VALUES  ('BL07',4050000,1,1)
+INSERT dbo.Luong ( BacLuong , LuongCoBan ,HeSoLuong , HeSoPhuCap )
+VALUES  ('BL08',4100000,1,1)
+INSERT dbo.Luong ( BacLuong , LuongCoBan ,HeSoLuong , HeSoPhuCap )
+VALUES  ('BL09',4200000,1,1)
+
+
 GO
 INSERT dbo.TrinhDoHocVan
 VALUES  ( 'TD01',N'Đại học',N'Công nghệ thông tin' )
@@ -261,3 +280,4 @@ VALUES  ( 'NV10' , -- MaNV - varchar(10)
           'PB01' , -- MaPB - varchar(10)
           'BL05'  -- BacLuong - varchar(10)
         )
+
