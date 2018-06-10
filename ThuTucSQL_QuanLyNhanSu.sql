@@ -276,5 +276,3 @@ BEGIN
 END
 
 GO
-
-SELECT * FROM dbo.TrinhDoHocVan
