@@ -34,14 +34,14 @@ namespace QuanLyNhanSu
             btnXoa.Enabled = !e;
             btnLuu.Enabled = e;
             btnHuy.Enabled = e;
-            txtMaNV.Enabled = e;
+            cmbNV.Enabled = e;
             cmbChucVu.Enabled = e;
             txtMaChucVu.Enabled = e;
             txtTenChucVu.Enabled = e;
         }
         private void clearData()
         {
-            txtMaNV.Text = "";
+            cmbNV.Text = "";
             cmbChucVu.Text = "";
             txtMaChucVu.Text = "";
             txtTenChucVu.Text = "";
@@ -55,6 +55,15 @@ namespace QuanLyNhanSu
             cmbChucVu.ValueMember = "MaChucVu";
 
         }
+        public void ShowNhanVien()
+        {
+            DataTable dt = new DataTable();
+            dt = bus.GetListNhanVien();
+            cmbChucVu.DataSource = dt;
+            cmbChucVu.DisplayMember = "HoTen";
+            cmbChucVu.ValueMember = "MaNV";
+
+        }
         private void HienThi()
         {
             dgvTGCT.DataSource = bus.GetData();
@@ -65,6 +74,7 @@ namespace QuanLyNhanSu
             HienThi();
             DisEnl(false);
             ShowChucVu();
+            ShowNhanVien();
 
         }
         private void btnThemTime_Click(object sender, EventArgs e)
@@ -85,7 +95,7 @@ namespace QuanLyNhanSu
             {
                 try
                 {
-                    bus.DeleteData(txtMaNV.Text);
+                    bus.DeleteData(cmbNV.SelectedValue.ToString());
                     MessageBox.Show("Xóa Thành Công!");
                     clearData();
                     DisEnl(false);
@@ -100,7 +110,7 @@ namespace QuanLyNhanSu
 
         private void btnLuuTime_Click(object sender, EventArgs e)
         {
-            obj.MaNV = txtMaNV.Text;
+            obj.MaNV = cmbNV.SelectedValue.ToString();
             obj.MaCV = cmbChucVu.SelectedValue.ToString();
             obj.NgayNhanChuc = dpNgayNhanChuc.Value;
 
@@ -158,7 +168,7 @@ namespace QuanLyNhanSu
 
         private void dgvTGCT_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            txtMaNV.Text = Convert.ToString(dgvTGCT.CurrentRow.Cells["MaNV"].Value);
+            cmbNV.Text = Convert.ToString(dgvTGCT.CurrentRow.Cells["MaNV"].Value);
             cmbChucVu.Text = Convert.ToString(dgvTGCT.CurrentRow.Cells["TenChucVu"].Value);
             dpNgayNhanChuc.Text = Convert.ToString(dgvTGCT.CurrentRow.Cells["NgayNhanChuc"].Value);
         }
